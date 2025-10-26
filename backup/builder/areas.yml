@@ -1,0 +1,56 @@
+            - name: Automation
+              slug: automation            
+            - name: Changes
+              slug: changes
+            - name: CLI
+              slug: cli
+            - name: Clients
+              slug: clients
+            - name: Code
+              slug: code
+            - name: Dashboards
+              slug: dashboards
+            - name: Design
+              slug: design
+            - name: Discovery
+              slug: discovery
+            - name: Engagement
+              slug: engagement
+            - name: Explorers
+              slug: explorers
+            - name: Gateways
+              slug: gateways
+            - name: Governance
+              slug: governance
+            - name: IDE
+              slug: ide
+            - name: Logging
+              slug: logging
+            - name: Monetization
+              slug: monetization
+            - name: Monitoring
+              slug: monitoring
+            - name: Observability
+              slug: observability
+            - name: Pipelines
+              slug: pipelines
+            - name: Proxies
+              slug: proxies
+            - name: Sandboxes
+              slug: sandboxes
+            - name: Security
+              slug: security
+            - name: Source Control
+              slug: source-control
+            - name: Specifications
+              slug: specifications
+            - name: Testing
+              slug: testing
+            - name: Traceability
+              slug: traceability
+            - name: Transformations
+              slug: transformations
+            - name: Workspaces
+              slug: workspaces
+            - name: Webhooks
+              slug: webhooks 

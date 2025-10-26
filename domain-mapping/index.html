@@ -1,0 +1,642 @@
+---
+layout: page
+title: Domain Mapping
+---
+<script>
+    function show(id){
+
+        if(document.getElementById(id).style.display == ''){
+            document.getElementById(id).style.display = 'none';
+        }
+        else{
+            document.getElementById(id).style.display = '';
+        }
+
+    }
+</script>
+
+<div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+    You have added a new service.
+</div>
+<div id="error-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+ERROR!!
+</div>
+<div id="process-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+PROCESS!
+</div>    
+
+<textarea style="width: 100%; height: 250px;" id="resources">[]</textarea>
+
+<style>
+
+  .building-block{
+      border: 2px dashed #000;
+      border-radius: 5px;
+      margin: 5px; 
+      padding: 5px;
+      font-weight: bold;
+  }
+
+  .building-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 10px;
+      width: 100%;
+      }    
+      
+  .selection-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 5px;
+      width: 100%;
+      overflow: auto;
+      height: 126px;
+      }               
+</style>
+
+<h2>Domain Mapping</h2>
+<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
+
+<div class="row">
+    <div class="col-4">   
+
+        <div class="row">
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
+                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
+            </div>
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
+                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
+            </div>
+
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
+              <img src="/assets/img/icons/download-icon.png" width="50">Download          
+            </div>
+            
+        </div>
+         <div class="row">
+            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
+                <center><input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)"></center>
+            </div>
+         </div>
+
+    </div>
+    <div class="col-4">
+        <div  class="selection-group">
+            <p><strong>&nbsp;&nbsp;Services</strong></p>
+            <select id="source-services" class="form-select" style="width: 100%;" onchange="loadResources();">
+              <option value="">Select Service</option>
+            </select>               
+        </div>          
+    </div>  
+    <div class="col-4">
+        <div id="source-resources" class="selection-group">
+            <strong>&nbsp;&nbsp;Resources (Scroll)</strong>                    
+        </div>          
+    </div>      
+
+</div>
+
+<div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
+
+    <div class="col-6">  
+        <p><strong>Domains</strong></p>
+        <textarea style="border: 1px solid #000; width: 100%;height: 500px; overflow: auto;" id="areas">
+            - name: Domain One
+              slug: domain-1            
+            - name: Domain Two
+              slug: domain-2 
+            - name: Domain Three
+              slug: domain-3           
+        </textarea>
+
+    </div>
+    <div class="col-6">    
+        <p><strong>Services</strong></p>
+        <textarea style="border: 1px solid #000; width: 100%; height: 500px; overflow: auto;" id="apis-json">
+          aid: domain-mapping
+          name: Domain Mapping
+          type: Domain
+          description: |-
+              This is a domain map.
+          image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-butterfly-vertical.png
+          tags:
+              - Platform
+              - Builder
+          created: '2025-10-24'
+          modified: '2025-10-24'
+          url: https://github.com/api-evangelist/platform-builder/blob/main/apis.yml
+          specificationVersion: '0.19'
+          common:
+
+            - name: Stripe
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com
+            - name: Shopify
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com
+            - name: BigCommerce
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com    
+            - name: Slack
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com          
+            - name: Zendesk
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                                                      
+            - name: Gmail
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com    
+            - name: Hubspot
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                    
+            - name: MailChimp
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com    
+            - name: Notion
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                    
+            - name: Amazon S3
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com    
+              properties:
+                - type: OpenAPI
+                  url: https://raw.githubusercontent.com/api-evangelist/amazon-web-services/refs/heads/main/openapi/s3-openapi-original.yml
+
+            - name: Snowflake
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com    
+            - name: Google Calendar
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                                    
+            - name: Google Drive
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com   
+            - name: Google Sheets
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com   
+            - name: Google Docs
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                                   
+            - name: Microsoft Teams
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com     
+            - name: Microsoft Graph
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com     
+            - name: Microsoft OneNote
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                                     
+            - name: ServiceNow
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com       
+            - name: Zoom
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com       
+            - name: DataDog
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com     
+            - name: GitHub
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com    
+            - name: Jira
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com    
+            - name: Confluence
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                                    
+            - name: SendGrid
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com  
+            - name: Twilio
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com  
+            - name: Anthropic
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com   
+              properties:
+                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-messages-api-openapi.yml
+                  type: OpenAPI
+                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-models-api-openapi.yml
+                  type: OpenAPI
+                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-message-batches-api-openapi.yml
+                  type: OpenAPI
+                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-files-api-openapi.yml
+                  type: OpenAPI
+                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-admin-api-openapi.yml
+                  type: OpenAPI
+                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-prompts-api-openapi.yml
+                  type: OpenAPI              
+            - name: OpenAI
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com   
+            - name: Gemini
+              type: Service
+              image: api-evangelist.png
+              tags:
+                - Services
+              url: https://example.com                   
+          maintainers:
+              - FN: Naftiko
+                email: kinlane@naftiko.io
+        </textarea>
+
+    </div>
+</div>
+
+
+<div class="row" style="border: 2px dashed #000; border-radius: 15px; padding: 5px;" id="capture">
+    <div class="col">  
+        <div class="row" style="border-radius: 15px; padding: 10px;">
+
+            <div class="col-4">        
+                
+                <div id="domain-1" class="building-group"></div>        
+                
+            </div>
+            <div class="col-4">
+
+                <div id="domain-2" class="building-group"></div>                                         
+
+            </div>
+            <div class="col-4"> 
+                
+                <div id="domain-3" class="building-group"></div> 
+
+            </div> 
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function removeService(slug){
+      document.getElementById(slug).remove();
+      document.getElementById(slug).remove();
+    }
+
+    function makeEntry(name,image,url){
+      var slug = slugify(name);
+      //console.log(slug);
+      let html = '<div class="building-block tinted" id="' + slug + '">';
+      html += '<a href="' + url + '" target="_blank">';
+      html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+      html += name;
+      html += '</a>';
+      html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
+      html += '</div>';
+      return html;
+    }
+
+    function populateBuilder(){
+
+      var areas_raw = document.getElementById("areas").value;
+      var areas = jsyaml.load(areas_raw);
+
+      var apis_json_raw = document.getElementById("apis-json").value;
+      var apis_json = jsyaml.load(apis_json_raw);
+
+      apis_json.common = apis_json.common.sort(function(a, b) {
+          var keyA = a.name,
+              keyB = b.name;
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+      });  
+        
+      var select = document.getElementById('source-services');
+      show_tags = "Services";
+      //var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
+      for (let i = 0; i < apis_json.common.length; i++) {
+          for (let j = 0; j < apis_json.common[i].tags.length; j++) {
+              if(apis_json.common[i].tags[j] == show_tags){
+                var opt = document.createElement('option');
+                opt.value = apis_json.common[i].name;
+                opt.innerHTML = apis_json.common[i].name;
+                select.appendChild(opt);  
+              }
+          }
+      }   
+          
+      new Sortable(document.getElementById('source-services'), {
+          group: 'platform',
+          animation: 150
+      });
+
+
+      for (let h = 0; h < areas.length; h++) {
+
+          show_tags = areas[h].name;
+          //console.log(show_tags);
+          var html = '<strong>&nbsp;&nbsp;' + show_tags + '</strong>';
+          for (let i = 0; i < apis_json.common.length; i++) {
+              var match = 0;
+              var match_default = 0;
+              for (let j = 0; j < apis_json.common[i].tags.length; j++) {
+                  if(apis_json.common[i].tags[j] == show_tags){
+                      match = 1;
+                  }
+                  if(apis_json.common[i].tags[j] == 'Default'){
+                      match_default = 1;
+                  }                
+              }
+              if(match == 1 && match_default == 1){
+                  html += makeEntry(apis_json.common[i].name,apis_json.common[i].image,apis_json.common[i].url);
+              }
+          } 
+          document.getElementById(areas[h].slug).innerHTML = html;                   
+
+          new Sortable(document.getElementById(areas[h].slug), {
+              group: 'platform',
+              animation: 150
+          });        
+
+      }
+
+    }
+  
+  populateBuilder();
+
+function buildEntry(){
+    var resources_raw = document.getElementById("resources").value;
+    var resources = jsyaml.load(resources_raw);
+
+    var html = '<strong>&nbsp;&nbsp;Resources (Scroll)</strong>';
+    for (let i = 0; i < resources.length; i++) {
+      html += makeEntry(resources[i],'drag.png','');
+    } 
+    document.getElementById("source-resources").innerHTML = html;  
+    new Sortable(document.getElementById('source-resources'), {
+        group: 'platform',
+        animation: 150
+    });       
+  }
+
+function saveScreenshotAsImage(canvas)
+    {
+        var fileNameToSaveAs = "platform-builder-screenshot.jpg";
+        var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null)
+        {
+        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
+        }
+        else
+        {
+        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        }
+    
+        downloadLink.click();
+    }          
+
+function saveTextAsFile()
+    {
+        var fileNameToSaveAs = "platform-builder.yml";
+        var apis_json = document.getElementById("apis-json").value;
+        var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null)
+        {
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+        }
+        else
+        {
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        }
+    
+        downloadLink.click();
+    }        
+    
+    function readFile(input) {
+        if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const fileContent = e.target.result;
+            try {
+            var apis_json = JSON.parse(fileContent);
+            var format = "json";
+            } catch (error) {
+                try {
+                var apis_json = jsyaml.load(fileContent);
+                var format = "yaml";
+            } catch (error) {
+                var format = "unknown";
+            } 
+            } 
+            
+            if(format == 'json' || format == 'yaml'){                       
+            document.getElementById("apis-json").value = jsyaml.dump(apis_json);
+            populateBuilder();
+            }
+            else{
+            //console.log("NOT");
+            }
+
+        };
+
+        reader.readAsText(input.files[0]); 
+        }
+    }
+    function takeScreenshot(){
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)                      
+            saveScreenshotAsImage(canvas);
+        });            
+    }
+
+    function loadResources(){
+
+      var apis_json_raw = document.getElementById("apis-json").value;
+      var apis_json = jsyaml.load(apis_json_raw);
+      var service = document.getElementById("source-services").value;
+
+      var services = [];
+
+      for (let h = 0; h < apis_json.common.length; h++) {
+        if(apis_json.common[h].name == service){
+          services.push(apis_json.common[h]);
+        }
+      }
+
+      for (let h = 0; h < services.length; h++) {
+        for (let i = 0; i < services[h].properties.length; i++) {
+
+          if(services[h].properties[i].type == 'OpenAPI'){
+
+            var openapi_url = services[h].properties[i].url       
+            var name = services[h].name;
+            //console.log(name);
+            //console.log(openapi_url);
+
+            var pull_url = openapi_url;
+            var user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    "user-agent": user_agent             
+                }
+            };  
+
+            fetch(pull_url,options)
+              .then(function(response) {
+                  if (!response.ok) {
+                      console.log('Error with Status Code: ' + response.status);
+                  }
+                  response.text().then(function(openapi_raw) {   
+
+                    //console.log(openapi_raw);
+
+                    var openapi = jsyaml.load(openapi_raw);
+
+                    for (const [path, method] of Object.entries(openapi.paths)) {   
+                      for (const [verb, operation] of Object.entries(method)) {                      
+
+                        var resources_raw = document.getElementById("resources").value;
+                        var resources = jsyaml.load(resources_raw);
+
+                        resources[operation.operationId] = operation;
+                        if(operation.tags){
+                          for (let a = 0; a < operation.tags.length; a++) {
+                            var already = 0;
+                             for (let b = 0; b < resources.length; b++) {
+                                if(resources[b] == operation.tags[a]){
+                                  already = 1;
+                                }
+                             }
+                          if(already == 0){
+                            var this_tag = operation.tags[a];
+                            this_tag = this_tag.replaceAll(".","");
+                            this_tag = this_tag.replaceAll("Restore ","");
+                            this_tag = this_tag.replaceAll("Update ","");
+                            this_tag = this_tag.replaceAll("Download ","");
+                            this_tag = this_tag.replaceAll("Select ","");
+                            this_tag = this_tag.replaceAll("Create ","");
+                            this_tag = this_tag.replaceAll("A ","");
+                            this_tag = this_tag.trim();
+                            resources.push(this_tag);
+                            }
+                          }
+                        }
+
+                        resources.sort();
+                        var resources_yaml = jsyaml.dump(resources);
+                        document.getElementById("resources").value = resources_yaml;
+                        
+                        buildEntry();
+                      }
+                    }
+
+
+                  });
+                })
+                .catch(function(err) {
+                    console.log('Error: ' + err);
+            });
+
+          }    
+
+        }
+      }
+
+    }
+</script>

@@ -1,0 +1,18 @@
+name: Naftiko Signals
+description: This is for managing engagement around the Naftiko Signals program.
+
+keywords:
+
+  - Signals
+
+permalink: /:categories/:year/:month/:day/:title/
+exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+
+categories_path : /categories.html
+tags_path : /tags.html
+
+github_org: naftiko
+github_repo: signals
+
+search_local: false
+search_url: /signals/index.json

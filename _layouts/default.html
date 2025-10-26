@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+  <head>   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ site.name }} - {{ page.title }}</title>
+    <link href="{{ site.url }}/assets/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ site.url }}/assets/sticky-footer.css" rel="stylesheet">
+    <link href="{{ site.url }}/assets/bootstrap-toggle.min.css" rel="stylesheet"> 
+    <script src="{{ site.url }}/assets/jquery-3.7.1.min.js"></script> 
+    <script src="{{ site.url }}/assets/bootstrap.bundle.min.js"></script>
+    <script src="{{ site.url }}/assets/bootstrap-toggle.min.js"></script>  
+    <script src="{{ site.url }}/assets/js-yaml.min.js"></script>    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6H4KFSEF6P"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6H4KFSEF6P');
+
+      function getQueryVariable(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split('&');
+          for (var i = 0; i < vars.length; i++) {
+              var pair = vars[i].split('=');
+              if (decodeURIComponent(pair[0]) == variable) {
+                  return decodeURIComponent(pair[1]);
+              }
+          }
+          console.log('Query variable %s not found', variable);
+      }       
+    </script>  
+    
+    
+    <script src="/assets/js/customize.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/assets/js/showdown.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/assets/js/turndown.js"></script>
+    <script src="/assets/js/cookies.js" type="text/javascript" charset="utf-8"></script>
+
+    <script>
+      function getQueryVariable(variable) {
+          var query = window.location.search.substring(1);
+          var vars = query.split('&');
+          for (var i = 0; i < vars.length; i++) {
+              var pair = vars[i].split('=');
+              if (decodeURIComponent(pair[0]) == variable) {
+                  return decodeURIComponent(pair[1]);
+              }
+          }
+          console.log('Query variable %s not found', variable);
+      }       
+    </script>
+
+  <link rel="stylesheet" data-name="vs/editor/editor.main" href="/assets/js/monaco-editor/min/vs/editor/editor.main.css" />    
+  <script src="/assets/js/js-yaml.min.js"></script>    
+
+  <link href="/assets/css/use-bootstrap-tag.min.css" rel="stylesheet">
+  <script src="/assets/js/use-bootstrap-tag.min.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T2YNJ0FDGE"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-T2YNJ0FDGE');
+  </script>
+
+  <style>
+    .tm-timeline {
+        box-sizing: border-box;
+        * {
+            box-sizing: border-box;
+        }
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: calc(30% - 2px);
+            bottom: 0;
+            width: 4px;
+            background: #676f7e;
+        }
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    .tm-timeline-entry {
+        + .tm-timeline-entry{
+            margin-top: 70px;
+        }
+        clear: both;
+        text-align: left;
+        position: relative;
+
+        &:after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+
+        .tm-timeline-time {
+            float: left;
+            width: 30%;
+            padding-right: 70px;
+            text-align: right;
+            position: relative;
+
+            &:before {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border: 4px solid #676f7e;
+                background-color: #fff;
+                border-radius: 100%;
+                top: 0;
+                right:  -10px;
+                z-index: 99;
+            }
+
+            h5 {
+                margin: 3px 0 0;
+            }
+        }
+
+        .tm-timeline-body {
+            float: right;
+            width: 70%;
+            top: 15px;
+            padding-top: 3px;
+            padding-left: 70px;
+            h3 {
+                margin: 0 0 15px;
+                span {
+                    padding: 1px 7px;
+                }
+            }
+
+        }    
+
+      pre code {
+        display: block;
+        background: none;
+        white-space: pre;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: scroll;
+        max-width: 100%;
+        min-width: 100px;
+        padding: 0;
+      }        
+  </style>  
+
+	<!-- Latest Sortable -->
+	<script src="/assets/js/Sortable.js"></script>
+	<script type="text/javascript" src="/assets/primary.js"></script>
+  <script type="text/javascript" src="/assets/js/prettify.js"></script>
+  <script type="text/javascript" src="/assets/js/html2canvas.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">{{ site.name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">                                   
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/domain-mapping/">Domain Mapping</a>
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/service-maturity/">Service Maturity</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/investment-priorities/">Investment Priorities</a>
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/platform-builder/">Platform Builder</a>
+            </li>                                                                                                                         
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container my-2">
+      {{ content }}
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col">
+              <a href="https://github.com/naftiko/links" style="color: #000;">Repo</a>
+            </div>
+            <div class="col">
+              <a href="https://psychic-adventure-przkry9.pages.github.io/links/" style="color: #000;">JSON</a>
+            </div>
+            <div class="col">              
+              <a href="https://github.com/naftiko/links/blob/main/_data/links.yml" style="color: #000;">YAML</a>
+            </div>
+            <div class="col">                 
+              <a href="javascript:void(window.open('https://github.com/naftiko/links/issues/new?labels=new&title=%27+encodeURIComponent(document.title)+%27&body=%27+getSelection().toString()+%27 ~ %27+encodeURIComponent(location.href)));" style="color: #000;">Bookmark</a>
+            </div>                
+          </div>
+      </div>         
+      </div>
+    </footer>
+    
+  </body>
+</html>
