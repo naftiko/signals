@@ -2,9 +2,7 @@
 layout: page
 title: Pricing
 ---
-
 <script>
-
     function show(id){
 
         if(document.getElementById(id).style.display == ''){
@@ -16,6 +14,7 @@ title: Pricing
 
     }
 </script>
+
 <div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
     You have added a new service.
 </div>
@@ -28,47 +27,43 @@ PROCESS!
 
 <style>
 
-    .building-block{
-        border: 2px dashed #000;
-        border-radius: 5px;
-        margin: 5px; 
-        padding: 5px;
-        font-weight: bold;
-    }
+  .building-block{
+      border: 2px dashed #000;
+      border-radius: 5px;
+      margin: 5px; 
+      padding: 5px;
+      font-weight: bold;
+  }
 
-    .building-group {
-        background-color: #FFF;
-        border: 3px solid #000;
-        border-radius: 10px;
-        margin: 5px; 
-        padding: 10px;
-        width: 100%;
-        }    
-        
-    .selection-group {
-        background-color: #FFF;
-        border: 3px solid #000;
-        border-radius: 10px;
-        margin: 5px; 
-        padding: 5px;
-        width: 100%;
-        overflow: auto;
-        height: 126px;
-        }          
-
-  .popover{
-      max-width: 750px;;
-  }            
+  .building-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 10px;
+      width: 100%;
+      }    
+      
+  .selection-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 5px;
+      width: 100%;
+      overflow: auto;
+      height: 149px;
+      }               
 </style>
 
-<h2>Service Maturity</h2>
-<p>Visualize the maturity of the services you depend on within a domain using a Wardley Map, considering your overall priorities and what your next investments are.</p>
-
+<h2>Pricing</h2>
+<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
 
 <div class="row">
-    <div class="col-4">   
+    <div class="col">   
 
         <div class="row">
+
             <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
                 <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
             </div>
@@ -80,87 +75,132 @@ PROCESS!
               <img src="/assets/img/icons/download-icon.png" width="50">Download          
             </div>
             
-        </div>
-         <div class="row">
             <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
-                <center><input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)"></center>
+                <input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)">
             </div>
+
          </div>
 
     </div>
-    <div class="col-8">
-        <div id="source-services" class="selection-group">
-            <strong>&nbsp;&nbsp;Services (Scroll)</strong>                    
-        </div>          
-    </div>  
 
 </div>
 
 <div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
 
-    <div class="col-6">  
+    <div class="col-4">  
         <p><strong>Domains</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%;height: 500px; overflow: auto;" id="areas">
-            - name: Domain One
-              slug: domain-1            
-            - name: Domain Two
-              slug: domain-2 
-            - name: Domain Three
-              slug: domain-3           
+        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="areas">
+        - name: Domain One
+          slug: domain-1            
+        - name: Domain Two
+          slug: domain-2 
+        - name: Domain Three
+          slug: domain-3           
         </textarea>
 
     </div>
-    <div class="col-6">    
+    <div class="col-4">    
         <p><strong>Services</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%; height: 500px; overflow: auto;" id="apis-json">
-          aid: domain-mapping
-          name: Domain Mapping
-          type: Domain
-          description: |-
-              This is a domain map.
-          image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-butterfly-vertical.png
-          tags:
-              - Platform
-              - Builder
-          created: '2025-10-24'
-          modified: '2025-10-24'
-          url: https://github.com/api-evangelist/platform-builder/blob/main/apis.yml
-          specificationVersion: '0.19'
-          common:
-
-              - name: Service One
-                type: Service
-                image: api-evangelist.png
-                tags:
-                  - Service
-                url: https://exmaple.com
-
-          maintainers:
-              - FN: Naftiko
-                email: kinlane@naftiko.io
+        {% assign services = site.data.services | jsonify %}
+        <textarea style="border: 1px solid #000; width: 100%; height: 600px; overflow: auto;" id="apis-json">
+          {{ services }}
         </textarea>
-
+        <script>
+          var json = document.getElementById("apis-json").value;
+          document.getElementById("apis-json").value = jsyaml.dump(JSON.parse(json));
+        </script>
     </div>
+    
+    <div class="col-4">    
+      <p><strong>Resources</strong></p>
+      <textarea style="width: 100%; height: 250px;" id="resources">[]</textarea>      
+    </div>
+
 </div>
 
+<br>
 
 <div class="row" style="border: 2px dashed #000; border-radius: 15px; padding: 5px;" id="capture">
     <div class="col">  
         <div class="row" style="border-radius: 15px; padding: 10px;">
 
-            <div class="col-4">        
+            <div class="col-4">  
+
+                <div style="padding-left: 7px;"><strong>Free</strong></div>
+                <div id="free" class="building-group"></div>        
                 
-                <div id="domain-1" class="building-group"></div>        
+            </div>    
+            <div class="col-4">  
+
+                <div style="padding-left: 7px;"><strong>Trial</strong></div>
+                <div id="trial" class="building-group"></div>        
+                
+            </div>     
+            <div class="col-4">  
+
+                <div style="padding-left: 7px;"><strong>Request</strong></div>
+                <div id="request" class="building-group"></div>        
+                
+            </div>                                 
+            <div class="col-4">  
+
+                <div style="padding-left: 7px;"><strong>User</strong></div>
+                <div id="user" class="building-group"></div>        
                 
             </div>
             <div class="col-4">
 
-                <div id="domain-2" class="building-group"></div>                                         
+                <div style="padding-left: 7px;"><strong>Usage</strong></div>
+                <div id="usage" class="building-group"></div>                                         
 
             </div>
             <div class="col-4"> 
-                
-                <div id="domain-3" class="building-group"></div> 
+
+                <div style="padding-left: 7px;"><strong>Model</strong></div>
+                <div id="model" class="building-group"></div> 
+
+            </div> 
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Token</strong></div>
+                <div id="token" class="building-group"></div> 
+
+            </div>  
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Credits</strong></div>
+                <div id="credits" class="building-group"></div> 
+
+            </div>                
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Tier</strong></div>
+                <div id="tier" class="building-group"></div> 
+
+            </div>    
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Subscription</strong></div>
+                <div id="subscription" class="building-group"></div> 
+
+            </div>    
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Percentage</strong></div>
+                <div id="percentage" class="building-group"></div> 
+
+            </div>   
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Contract</strong></div>
+                <div id="contract" class="building-group"></div> 
+
+            </div>                                                   
+
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Region</strong></div>
+                <div id="region" class="building-group"></div> 
 
             </div> 
 
@@ -178,7 +218,13 @@ PROCESS!
     function makeEntry(name,image,url){
       var slug = slugify(name);
       //console.log(slug);
-      let html = '<div class="building-block tinted" id="' + slug + '"><a href="' + url + '" target="_blank"><img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">' + name + '</a><a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a></div>';
+      let html = '<div class="building-block tinted" id="' + slug + '">';
+      //html += '<a href="' + url + '" target="_blank" style=" font-size: 14px;">';
+      html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+      html += '<span style=" font-size: 14px;">' + name + '</span>';
+      //html += '</a>';
+      html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
+      html += '</div>';
       return html;
     }
 
@@ -189,6 +235,7 @@ PROCESS!
 
       var apis_json_raw = document.getElementById("apis-json").value;
       var apis_json = jsyaml.load(apis_json_raw);
+      //var apis_json = JSON.parse(apis_json_raw);
 
       apis_json.common = apis_json.common.sort(function(a, b) {
           var keyA = a.name,
@@ -198,62 +245,65 @@ PROCESS!
           return 0;
       });  
         
+      var select = document.getElementById('source-services');
       show_tags = "Services";
-      var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
+      var options = '';
+
+      //var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
       for (let i = 0; i < apis_json.common.length; i++) {
-          var match = 0;
           for (let j = 0; j < apis_json.common[i].tags.length; j++) {
               if(apis_json.common[i].tags[j] == show_tags){
-                  match = 1;
+
+                var image = apis_json.common[i].image;
+                var name = apis_json.common[i].name;
+                var slug = slugify(apis_json.common[i].name);
+                var url = 'https://naftiko.io'
+                
+                let option = '<div class="building-block tinted" id="' + slug + '">';
+                option += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+                option += '<span style=" font-size: 14px;">' + name + '</span>';
+                option += '&nbsp;&nbsp;<a href="#" onclick="loadResources(' + "'" + name + "'" + '); return false;" target="_blank" style=" font-size: 14px;">';
+                option += '(Load)';
+                option += '</a>';                
+                option += '</div>';
+
+                for (let k = 0; k <  apis_json.common[i].pricing.length; k++) {
+
+                    var slug =  apis_json.common[i].pricing[k].toLowerCase();
+                    console.log(slug);
+
+                    var options = document.getElementById(slug).innerHTML;
+
+                    options += option;
+
+                    document.getElementById(slug).innerHTML = options;
+
+                }
+
               }
           }
-          if(match == 1){
-              html += makeEntry(apis_json.common[i].name,apis_json.common[i].image,apis_json.common[i].url);
-          }
-      } 
-      document.getElementById("source-services").innerHTML = html;        
-
-          
-      new Sortable(document.getElementById('source-services'), {
-          group: 'platform',
-          animation: 150
-      });
-
-
-      for (let h = 0; h < areas.length; h++) {
-
-          show_tags = areas[h].name;
-          var html = '<strong>&nbsp;&nbsp;' + show_tags + '</strong>';
-          for (let i = 0; i < apis_json.common.length; i++) {
-              var match = 0;
-              var match_default = 0;
-              for (let j = 0; j < apis_json.common[i].tags.length; j++) {
-                  if(apis_json.common[i].tags[j] == show_tags){
-                      match = 1;
-                  }
-                  if(apis_json.common[i].tags[j] == 'Default'){
-                      match_default = 1;
-                  }                
-              }
-              if(match == 1 && match_default == 1){
-                  html += makeEntry(apis_json.common[i].name,apis_json.common[i].image,apis_json.common[i].url);
-              }
-          } 
-          document.getElementById(areas[h].slug).innerHTML = html;                   
-
-          new Sortable(document.getElementById(areas[h].slug), {
-              group: 'platform',
-              animation: 150
-          });        
-
-      }
+      }   
 
     }
   
     populateBuilder();
 
-function saveScreenshotAsImage(canvas)
-    {
+    function buildEntry(service){
+        var resources_raw = document.getElementById("resources").value;
+        var resources = jsyaml.load(resources_raw);
+
+        var html = '';
+        for (let i = 0; i < resources.length; i++) {
+        html += makeEntry(service + ' ' + resources[i],'drag.png','',);
+        } 
+        document.getElementById("source-resources").innerHTML = html;  
+        new Sortable(document.getElementById('source-resources'), {
+            group: 'platform',
+            animation: 150
+        });       
+    }
+
+    function saveScreenshotAsImage(canvas){
         var fileNameToSaveAs = "platform-builder-screenshot.jpg";
         var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
         var downloadLink = document.createElement("a");
@@ -274,8 +324,7 @@ function saveScreenshotAsImage(canvas)
         downloadLink.click();
     }          
 
-function saveTextAsFile()
-    {
+    function saveTextAsFile(){
         var fileNameToSaveAs = "platform-builder.yml";
         var apis_json = document.getElementById("apis-json").value;
         var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
@@ -295,7 +344,7 @@ function saveTextAsFile()
         }
     
         downloadLink.click();
-    }        
+        }        
     
     function readFile(input) {
         if (input.files && input.files[0]) {
@@ -320,7 +369,7 @@ function saveTextAsFile()
             populateBuilder();
             }
             else{
-            console.log("NOT");
+            //console.log("NOT");
             }
 
         };
@@ -328,10 +377,12 @@ function saveTextAsFile()
         reader.readAsText(input.files[0]); 
         }
     }
+
     function takeScreenshot(){
         html2canvas(document.querySelector("#capture")).then(canvas => {
             document.body.appendChild(canvas)                      
             saveScreenshotAsImage(canvas);
         });            
     }
+
 </script>

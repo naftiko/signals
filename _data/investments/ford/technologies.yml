@@ -1,0 +1,525 @@
+- Acceptance Criteria
+- Acceptance Testing
+- Access
+- Access Control
+- Access Management
+- Accessibility Standards
+- Adobe
+- Adobe Analytics
+- Adobe Creative Suite
+- Adobe Suite
+- Agile
+- Agile Delivery
+- Agile Methodologies
+- Ai
+- Ai/ml
+- Airflow
+- Airtable
+- Alerting
+- Alerts
+- Algorithm Development
+- Alteryx
+- Amplitude
+- Analytics
+- Android
+- Angular
+- Angular 15
+- Anomaly Detection
+- Ansible
+- Api
+- Apigee
+- Apis
+- Application Security
+- Artificial Intelligence
+- Asana
+- Asset Management
+- Audit
+- Authentication
+- Authorization
+- Automated Testing
+- Automation
+- Automation Platforms
+- Aws
+- Azure
+- Backstage
+- Bash
+- Belts
+- Benchmarking
+- Big Data
+- Blender
+- Box
+- Business Analysis
+- Business Analytics
+- Business Continuity
+- Business Intelligence
+- Business Plans
+- Business Process Mapping
+- Calypso
+- Capacity Management
+- Cassandra
+- Centralized Repository
+- Change Management
+- Chat
+- Checkmarx
+- Chef
+- Ci/cd
+- Cisco
+- Cloud
+- Cloud Architecture
+- Cloud Computing
+- Cloud Engineering
+- Cloud Environments
+- Cloud Infrastructure
+- Cloud Native
+- Cloud Platform
+- Cloud Platforms
+- Cloud Security
+- Cloud Services
+- Cloud Storage
+- Cloud Strategy
+- Cloud Systems
+- Cloud Technologies
+- Cloud-based Solutions
+- Cloud-native
+- Cloud-native Architecture
+- Cloud-native Architectures
+- Cloud-native Tech
+- Cloud-native Technologies
+- Clustering
+- Commodity
+- Complexity Analysis
+- Compliance
+- Computer Systems
+- Computers
+- Concur
+- Configuration Management
+- Confluence
+- Container Orchestration
+- Containerization
+- Containers
+- Content
+- Content Management
+- Continuous Deployment
+- Continuous Improvement
+- Continuous Integration
+- Continuous Monitoring
+- Contract Management
+- Contributions
+- Control Algorithms
+- Control Systems
+- Cost Optimization
+- Cucumber
+- Customer Analytics
+- Customer Journey
+- Customer Segmentation
+- Cyber Defense
+- Cyber Security
+- Cybersecurity
+- Cybersecurity Frameworks
+- Cybersecurity Standards
+- Dagster
+- Dashboards
+- Data
+- Data Acquisition
+- Data Analysis
+- Data Analysis Tools
+- Data Analytics
+- Data And Analytics
+- Data Architecture
+- Data Collection
+- Data Engineering
+- Data Entry
+- Data Exploration
+- Data Extraction
+- Data Factory
+- Data Flow Diagrams
+- Data Governance
+- Data Governance Frameworks
+- Data Infrastructure
+- Data Insights
+- Data Integrations
+- Data Integrity
+- Data Lake
+- Data Lakes
+- Data Management
+- Data Management Tools
+- Data Mesh
+- Data Migration
+- Data Modeling
+- Data Normalization
+- Data Pipelines
+- Data Platforms
+- Data Privacy
+- Data Profiling
+- Data Protection
+- Data Quality
+- Data Science
+- Data Science Techniques
+- Data Security
+- Data Services
+- Data Structures
+- Data Systems
+- Data Transformation
+- Data Visualization
+- Data Visualization Tools
+- Data Warehouse
+- Data Warehouses
+- Data Warehousing
+- Data-driven
+- Data-driven Decision-making
+- Database Management
+- Database Technologies
+- Databases
+- Databricks
+- Datadog
+- Deep Learning
+- Deployment
+- Design Guidelines
+- Design Patterns
+- Design Review
+- Design Systems
+- Design Thinking
+- Devops
+- Diagnostic Tools
+- Digital Solutions
+- Digital Technologies
+- Digital Tools
+- Digital Transformation
+- Disaster Recovery
+- Distributed Systems
+- Distribution Systems
+- Docker
+- Due Diligence
+- E-commerce
+- Edi
+- Elastic Search
+- Elasticsearch
+- Electric Vehicles
+- Email
+- Encryption
+- End-to-end Testing
+- Endpoint Security
+- Energy Management
+- Erp
+- Etl
+- Event Registration
+- Event-driven Architecture
+- Event-driven Systems
+- Excel
+- Fastapi
+- Figma
+- Financial Modeling
+- Financial Models
+- Firewalls
+- Fraud
+- Functional Testing
+- Git
+- Github
+- Github Actions
+- Gitlab
+- Global Markets
+- Google
+- Google Cloud
+- Google Cloud Platform
+- Grafana
+- Groovy
+- Hadoop
+- Hipaa
+- Incident Response
+- Informatica
+- Information Security
+- Information Technology
+- Infrastructure
+- Infrastructure As Code
+- Instrumentation
+- Integration
+- Integration Testing
+- Integrations
+- Interface Specifications
+- Internal Audit
+- Internal Control Framework
+- Internal Controls
+- Internal Systems
+- Internal Tools
+- Interoperability
+- Inventory Management
+- Iso
+- It Risk
+- Java
+- Jenkins
+- Jest
+- Jira
+- Kafka
+- Kanban
+- Knowledge Base
+- Knowledge Management
+- Kotlin
+- Kubernetes
+- Large Language Models
+- Large Language Models (Llms)
+- Lean
+- Lean Six Sigma
+- Learning Management System
+- Lighting
+- Linux
+- Llama
+- Llm
+- Logging
+- Lucidchart
+- Machine Learning
+- Mainframe
+- Management Software
+- Market Intelligence
+- Mastercard
+- Matlab
+- Maven
+- Messaging
+- Messaging Queues
+- Metadata Management
+- Microservices
+- Microservices Architecture
+- Microsoft Azure
+- Microsoft Excel
+- Microsoft Office
+- Microsoft Office 365
+- Microsoft Power Platform
+- Microsoft Project
+- Microsoft Suite
+- Microsoft Teams
+- Microsoft Visio
+- Middleware
+- Mixpanel
+- Mockito
+- Model Monitoring
+- Modeling
+- Monitoring
+- Monitoring Services
+- Monitoring Software
+- Monitoring Tools
+- Multiple Systems
+- Natural Language Processing
+- Network Architecture
+- Network Protocols
+- Network Security
+- Networking
+- Neural Networks
+- Nist
+- Node.js
+- Numpy
+- Observability
+- Office 365
+- Opc
+- Open Policy Agent
+- Open-source Technologies
+- Openshift
+- Operating Systems
+- Operational Metrics
+- Operational Resilience
+- Operational Systems
+- Oracle
+- Orchestration
+- Pair Programming
+- Pandas
+- Pdf
+- Penetration Testing
+- Performance Management
+- Performance Monitoring
+- Performance Testing
+- Performance Tuning
+- Photoshop
+- Pivot Tables
+- Platform Development
+- Platform Engineering
+- Platforms
+- Postman
+- Postmortem
+- Power Apps
+- Power Platform
+- Power Tools
+- Powerpoint
+- Powershell
+- Predictive Analytics
+- Predictive Modeling
+- Problem-solving Tools
+- Process Automation
+- Process Design
+- Process Mapping
+- Process Mapping Tools
+- Process Optimization
+- Product Backlog
+- Product Lifecycle Management
+- Product Owner
+- Product Roadmap
+- Production Deployment
+- Production Environment
+- Production Support
+- Production System
+- Project Management
+- Project Management Tools
+- Prometheus
+- Prompt Engineering
+- Prototype Development
+- Prototypes
+- Public Cloud
+- Pulse
+- Python
+- Pytorch
+- Qlik Sense
+- Quality Assurance
+- Quality Assurance Processes
+- Quality Management
+- Qube
+- React
+- React.js
+- Reconciliation
+- Redux
+- Regression Testing
+- Relational Databases
+- Release Management
+- Replication
+- Reporting
+- Reporting Tools
+- Resource Allocation
+- Rest
+- Rest Apis
+- Rhel
+- Risk Assessment
+- Risk Assessments
+- Risk Management
+- Risk Management Systems
+- Root Cause Analysis
+- Runbooks
+- Safe
+- Sales Cloud
+- Salesforce
+- Sap
+- Sap Business Objects
+- Scala
+- Scanning
+- Scripting Languages
+- Scrum
+- Sdlc
+- Secure Coding Practices
+- Secure Software Development
+- Security
+- Security Controls
+- Security Engineering
+- Security Frameworks
+- Security Measures
+- Security Procedures
+- Segmentation
+- Selenium
+- Seo
+- Serverless
+- Service Cloud
+- Service Level Objectives (Slos)
+- Services
+- Shell
+- Simulation
+- Simulation Modeling
+- Simulation Tools
+- Six Sigma
+- Smoke Testing
+- Snowflake
+- Soap
+- Social
+- Social Media
+- Software Deployment
+- Software Design Patterns
+- Software Interfaces
+- Software Testing
+- Software Version Control
+- Sonar
+- Sonarqube
+- Spark
+- Spear
+- Splunk
+- Spring
+- Spring Boot
+- Spring Boot 3
+- Spring Data
+- Springboot
+- Sql
+- Square
+- Standard Operating Procedures
+- Standardization
+- Standards
+- Standups
+- Statistical Analysis
+- Statistical Modeling
+- Statistical Models
+- Statistical Techniques
+- Statistical Tools
+- Statistics
+- Storage
+- Stored Procedures
+- Streaming
+- Streaming Architectures
+- Supplier Contracts
+- Supply Chain
+- Svn
+- Swagger
+- Swift
+- System Architecture
+- System Development
+- System Integrations
+- System Solutions
+- Systems Design
+- Systems Engineering
+- Tableau
+- Taina
+- Technical Specifications
+- Tensorflow
+- Teradata
+- Terraform
+- Test Automation
+- Test Cases
+- Test Environments
+- Test Scripts
+- Test Specifications
+- Test-driven Development
+- Testing
+- Testing Frameworks
+- Testing Tools
+- Threat Hunting
+- Threat Intelligence
+- Threat Modeling
+- Time Management
+- Tokenization
+- Tracking Software
+- Typescript
+- Ubuntu
+- Unit Testing
+- Unity
+- Unix
+- Usability
+- Use Cases
+- User Acceptance Testing
+- User Experience
+- User Interface
+- User Research
+- User Stories
+- Ux
+- Value Streams
+- Vault
+- Vba
+- Version Control
+- Version Control Systems
+- Visio
+- Visualization
+- Vue.js
+- Vulnerability Assessment
+- Vulnerability Management
+- Waterfall
+- Web Applications
+- Web Components
+- Web Services
+- Web-based Applications
+- Word
+- Workflow
+- Workflow Automation
+- Workflows
+- Xml
+- Yaml
+- Zero Trust
+- Zoom

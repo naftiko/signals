@@ -1,0 +1,652 @@
+- Abacus
+- Acadia
+- Active Directory
+- Active Directory Domain Controllers (Dcs)
+- Active Directory Sites And Services
+- Adobe Aem
+- Adobe Analytics
+- Adobe Campaign
+- Adobe Creative Cloud
+- Adobe Creative Suite
+- Adobe Experience Manager (Aem) 6.4+
+- Adobe Illustrator
+- Adobe Indesign
+- Adobe Photoshop
+- Advanced Excel
+- Aircon
+- Airflow
+- Alteryx
+- Amazon S3
+- Amazon Web Services (Aws)
+- Android
+- Angular
+- Angular (V7–v19)
+- Angular 14
+- Angular 14 And Above
+- Angular 14+
+- Angular 15
+- Angular 17
+- Angular 18
+- Angular 20
+- Angular Cdk
+- Angular Js
+- Angular Material
+- Ansible
+- Ansible Automation Platform
+- Ansible Playbooks
+- Ansible Roles
+- Ansible Tower
+- Apache
+- Apache Airflow
+- Apache Camel
+- Apache Felix
+- Apache Http Server
+- Apache Httpd
+- Apache Ignite
+- Apache Kafka
+- Apache Nifi
+- Apache Sling
+- Apache Spark
+- Apache Tomcat
+- Apigee
+- Apigee Api Gateway
+- Archimate
+- Argus
+- Argus Developer
+- Argus Enterprise
+- Argus Investor
+- Artemis
+- Aruba Mobility Controller (Mc)
+- Aruba Switches
+- Atlassian Jira
+- Audatex
+- Autocad
+- Avaloq
+- Aws
+- Aws Waf
+- Axiom
+- Axiom Controller
+- Axiom Controller Viewer (Adenza/nasdaq)
+- Axiom Viewer
+- Axway Api Gateway
+- Axway Cft
+- Axway Securetransport
+- Axway Security Gateway
+- Axway St
+- Azure
+- Azure Active Directory
+- Azure Functions
+- Azure Information Protection (Aip)
+- Bancomat
+- Bancontact
+- Bash
+- Bitbucket
+- Bloomberg
+- Bloomberg Aim
+- Bloomberg Apis
+- Bloomberg Terminal
+- Bloomberg Terminal (Bbg)
+- Broadridge Bps
+- Broadridge Tds
+- Broadridge Tms
+- Brocade
+- Browserstack
+- Burp Suite
+- Business Intelligence (Bi)
+- Calypso
+- Calypso Accounting
+- Calypso Api
+- Calypso Back Office
+- Calypso Front Office
+- Calypso Migration
+- Calypso Pnl
+- Calypso Pricing
+- Calypso V16
+- Calypso V17
+- Calypso Workflow
+- Calypso Workstation
+- Cassandra
+- Chat
+- Chatgpt
+- Cisco
+- Cisco Asa
+- Cisco Catalyst 9800 Wlc
+- Cisco Catalyst Center
+- Cisco Catalyst Switches
+- Cisco Firepower
+- Cisco Identity Services Engine (Ise)
+- Cisco Nexus 9000
+- Cisco Secure Client
+- Cisco Vg224
+- Clearstream
+- Clickhouse
+- Cloudflare
+- Commvault
+- Concourse Ci
+- Concur
+- Confluence
+- Confluence Unity
+- Connexis Cash
+- Crystal Reports
+- Cucumber
+- Cucumber Ide Plugin
+- Cyberark
+- Cyberark Central Policy Manager (Cpm)
+- Cyberark Connectors
+- Cyberark Dispatchers
+- Cyberark Plugins
+- Cyberark Privileged Session Manager (Psm)
+- Cyberark Psm Webform
+- Cyberark Vault
+- Data
+- Datahub
+- Dataiku
+- Db2
+- Db2sql
+- Dealogic
+- Dell Emc Ecs
+- Dell Emc Powermax
+- Dell Servers
+- Dell Software
+- Docker
+- Docubase
+- Elastic Search
+- Elastic Stack
+- Elasticsearch
+- Elearning
+- Elk
+- Elk Stack
+- Emc
+- Emc Data Domain
+- Emc San
+- Emc San Storage Arrays
+- Emc Unity
+- Emc Vmax
+- Emc Vnx
+- Everbridge
+- Excel
+- Excel Macros
+- F5
+- F5 Asm
+- F5 Load Balancer
+- F5 Ltm
+- Facebook
+- Factset
+- Figma
+- Fortify
+- Gemini
+- Geneos
+- Git
+- Github
+- Gitlab
+- Gitlab Ci
+- Gitlab Ci/cd
+- Google Ads
+- Google Cloud
+- Google Cloud Platform (Gcp)
+- Grafana
+- Groovy
+- Hadoop
+- Hashicorp Vault
+- Hibernate
+- Hobart
+- Hobart Mailbox
+- Hobart Query Management System
+- Hp Alm
+- Hp Comware
+- Hp Quality Center
+- Hris Systems
+- Hundsun
+- Hunter
+- Hvault
+- Ibm
+- Ibm Cd
+- Ibm Cleversafe
+- Ibm Cloud
+- Ibm Cognos
+- Ibm Connect:direct
+- Ibm Datastage
+- Ibm Guardium
+- Ibm Mq
+- Ibm Private Cloud
+- Ibm Public Cloud
+- Ibm Tivoli System Automation
+- Ibm Was
+- Ibm Websphere
+- Ibm Websphere Application Server
+- Ibm Websphere Application Server (Was)
+- Ibm Websphere Mq
+- In-house Systems
+- Infinistream
+- Infinity Platform
+- Infoblox
+- Infocast
+- Informatica
+- Instagram
+- Intellij
+- Intellij Idea
+- Intellimatch
+- Jaspersoft
+- Java
+- Javascript
+- Jboss
+- Jboss Eap
+- Jboss Ews
+- Jenkins
+- Jenkins Pipeline
+- Jenkins Pipelines
+- Jest
+- Jira
+- Jmeter
+- Jmock
+- Jquery
+- Json
+- Junit
+- Kafka
+- Kafka Connect
+- Kanban
+- Kibana
+- Klaxoon
+- Kondor
+- Korn Shell
+- Kotlin
+- Kubernetes
+- Lighting
+- Lightroom
+- Linkedin
+- Linux
+- Linux Rhel
+- Linux Server
+- Linux/unix
+- Llama
+- Logstash
+- Marginman
+- Mastercard
+- Matisse
+- Matlab
+- Matplotlib
+- Maven
+- Mcafee
+- Mecm Cb
+- Mecm Cb Distribution Points
+- Mecm Cb Monitoring
+- Mecm Cb Server Upgrades
+- Meridian
+- Metasploit
+- Microsoft 365
+- Microsoft Access
+- Microsoft Active Directory
+- Microsoft Applications
+- Microsoft Azure
+- Microsoft Bi Stack
+- Microsoft Defender
+- Microsoft Defender For Office 365
+- Microsoft Dynamics Nav (Navision)
+- Microsoft Endpoint Configuration Manager (Mecm)
+- Microsoft Entity Framework
+- Microsoft Entra Id
+- Microsoft Excel
+- Microsoft Forms
+- Microsoft Iis
+- Microsoft Information Protection (Mip)
+- Microsoft Intune
+- Microsoft Office
+- Microsoft Office (Ms Office)
+- Microsoft Office 365
+- Microsoft Onenote
+- Microsoft Os
+- Microsoft Outlook
+- Microsoft Package
+- Microsoft Packages
+- Microsoft Planner
+- Microsoft Power Bi
+- Microsoft Power Platform
+- Microsoft Powerbi
+- Microsoft Powerpoint
+- Microsoft Project
+- Microsoft Purview
+- Microsoft Sharepoint
+- Microsoft Sql Server
+- Microsoft Sql Server (Mssql)
+- Microsoft Sql Server Reporting Services (Ssrs)
+- Microsoft Ssas
+- Microsoft Ssis
+- Microsoft Ssrs
+- Microsoft Teams
+- Microsoft Technologies
+- Microsoft Visio
+- Microsoft Visual Studio Data Tools
+- Microsoft Windows
+- Microsoft Windows Server
+- Microsoft Word
+- Mistral
+- Mobileiron
+- Mockito
+- Mongodb
+- Montique
+- Montran
+- Monétique
+- Moody's
+- Ms Excel
+- Ms Office
+- Ms Office 365
+- Ms Office Suite
+- Murex
+- Mysql
+- NONE
+- Navision
+- Navison
+- Neobanks
+- Neobrokers
+- Neolink
+- Nessus
+- Netapp
+- Netbackup Ost
+- Netflow
+- Netreveal
+- Netscout
+- Netwerken
+- Nexus
+- Nexus Iq
+- Nginx
+- Node.js
+- Nostro
+- Nostro Monitoring
+- Numpy
+- Nutanix
+- Office 365
+- Ollama
+- Openshift
+- Openstack
+- Openstack Cli
+- Openstack Horizon
+- Oracle
+- Oracle Apex
+- Oracle Asm
+- Oracle Business Intelligence
+- Oracle Data Base
+- Oracle Data Guard
+- Oracle Data Integrator (Odi)
+- Oracle Database
+- Oracle Database (19c Or Newer)
+- Oracle Db
+- Oracle Enterprise Database
+- Oracle Enterprise Manager
+- Oracle Essbase
+- Oracle Exadata
+- Oracle Goldengate
+- Oracle Hyperion Financial Management
+- Oracle Multitenant
+- Oracle Parallelism
+- Oracle Partitioning
+- Oracle Pl-sql
+- Oracle Pl/sql
+- Oracle Plsql
+- Oracle Rac
+- Oracle Scheduler
+- Oracle Siebel
+- Oracle Smart View
+- Oracle Sql
+- Oracle Sql Developer
+- Oracle Weblogic
+- Orion
+- Orion Workflow
+- Outil Achats
+- Outils De Gestion Des Risques
+- Outils De Tarification
+- Outils De Transfert
+- Outils De Travail Digitaux
+- Outils Digitaux
+- Outils Externes
+- Outils Informatiques Associés
+- Outils Internes
+- Owasp Zap
+- Palo Alto Networks
+- Pandas
+- Panorama
+- Paradox
+- Peoplesoft
+- Photoshop
+- Picasso
+- Pillar 3
+- Pillar 3 Disclosures
+- Pipeda
+- Playwright
+- Pluralsight
+- Podman
+- Point Of Sale (Pos)
+- Postgresql
+- Postman
+- Power Apps
+- Power Bi
+- Power Query
+- Powerbi
+- Powerbuilder
+- Powerpoint
+- Powershell
+- Proactis
+- Prometheus
+- Prudential Backstop
+- Pulse
+- Puppet
+- Putty
+- Pycharm
+- Pyspark
+- Python
+- Pytorch
+- Qlik Sense
+- Qlikview
+- Qradar
+- Qube
+- Qube Horizon
+- Rainmaker Live
+- Rasyonet
+- React
+- Readsoft
+- Red Hat
+- Red Hat Ansible Automation Platform
+- Red Hat Enterprise Linux (Rhel)
+- Red Hat Enterprise Linux 6.x
+- Red Hat Enterprise Linux 7
+- Red Hat Enterprise Linux 7.x
+- Red Hat Enterprise Linux 8
+- Red Hat Enterprise Linux 8.x
+- Red Hat Enterprise Linux 9
+- Red Hat Enterprise Linux 9.x
+- Red Hat Linux
+- Red Hat Satellite
+- Redis
+- Redux
+- Reuters
+- Reuters Rmds
+- Rhel
+- Riba Workstages
+- Rundeck
+- S4hana
+- Sailpoint
+- Sailpoint Identityiq
+- Salesforce
+- Sap
+- Sap Atc
+- Sap Bi
+- Sap Business Objects
+- Sap Businessobjects
+- Sap Concur
+- Sap Concur Expense
+- Sap Concur Request
+- Sap Erp
+- Sap Fico
+- Sap Financial Consolidation
+- Sap Mm
+- Sap Modules
+- Sap Sd
+- Sap Ui5
+- Scala
+- Selenium
+- Sentry System
+- Servicenow
+- Servicenow (Snow)
+- Servicenow Data Import
+- Servicenow Grc
+- Servicenow It Service Management
+- Servicenow Knowledge Module
+- Servicenow Platform
+- Servicenow Release Management
+- Servicenow Reporting
+- Servicenow Reporting Module
+- Servicenow Service Catalog
+- Servicenow Testing
+- Servicenow Workflows
+- Sharepoint
+- Sharepoint Api
+- Sharepoint Apps
+- Sharepoint Framework (Spfx)
+- Sharepoint Lists
+- Sharepoint Online
+- Shell
+- Shell Scripting
+- Siebel
+- Siebel Configuration
+- Siebel Crm
+- Siebel Data Model
+- Siebel Eai
+- Siebel Eim
+- Signplus
+- Simcorp Dimension
+- Simcorp Dimension Front Office
+- Soap
+- Soapui
+- Sofresh
+- Solaris
+- Solaris Zones
+- Solarwinds
+- Solarwinds Network Topology Mapper (Ntm)
+- Sonar
+- Sonarqube
+- Sonatype Nexus
+- Sonatype Nexus Iq
+- Sondage Pulse
+- Spark
+- Sparx Enterprise Architect
+- Spear
+- Specflow
+- Spitab
+- Splunk
+- Spreadsheets
+- Spring
+- Spring Batch
+- Spring Batch 5.1
+- Spring Boot
+- Spring Boot 3
+- Spring Boot Admin Console
+- Spring Cloud
+- Spring Cloud Stream
+- Spring Data
+- Spring Data Jpa
+- Spring Framework
+- Spring Mvc
+- Spring Security
+- Sql Server
+- Sql Server Analysis
+- Sql Server Analysis Services
+- Sql Server Integration Services
+- Sql Server Reporting Services
+- Square
+- Sumif
+- Svn
+- Sybase
+- Sybase Ase
+- Sybase Iq
+- Symantec Dlp
+- Symphonyai
+- Tableau
+- Tableau Desktop
+- Tableau Server
+- Tableaux De Bord
+- Tagetik
+- Taina
+- Tallyman
+- Tanium
+- Teamcity
+- Teap
+- Telefon
+- Telefonie
+- Telefono
+- Telefoon
+- Telewerken
+- Temenos
+- Temenos Transact
+- Temenos Triple A
+- Tensorflow
+- Teradata
+- Terraform
+- Thermal Power
+- Thetaray
+- Thymeleaf
+- Tibco
+- Tibco Activematrix
+- Tibco Administrator
+- Tibco Businessworks 5.x
+- Tibco Ems
+- Tibco Hawk
+- Tibco Mft
+- Tomcat
+- Tradeweb
+- Travis Ci
+- Trellix
+- Trellix Web Gateway
+- Trioptima
+- Triple A Tslapi Framework
+- Triplea
+- Triplea Scripting
+- Triton
+- Tufin
+- Typescript
+- Ubix
+- Ubuntu
+- Ui/ux
+- Unity
+- Unity Financial Report Manager
+- Unity Nxt Regulatory Reporting
+- Unity Workstation
+- Unix
+- Urdg
+- Varonis
+- Varonis Datadvantage
+- Vault
+- Vba
+- Veritas Cluster
+- Veritas Cluster Server (Vcs)
+- Veritas Infoscale
+- Veritas Netbackup
+- Veritas Volume Manager
+- Veritas Volume Manager (Vxvm)
+- Videogesprek
+- Visio
+- Visioconférence
+- Vite
+- Vmware
+- Vmware Esxi
+- Vmware Vcenter Server 7.0
+- Vmware Vcenter Server 8.0
+- Vmware Vsan
+- Voiio
+- Vue.js
+- Webflux
+- Weblogic
+- Websphere
+- Whatsapp
+- Wireshark
+- Word
+- Wtx Launcher
+- Wynsure
+- Xceptor
+- Xml
+- Xunit
+- Yaml
+- Yardi
+- Yardi Propware
+- Yardi Voyager
+- Youtube
+- Zabbix
+- Zoom

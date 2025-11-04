@@ -25,8 +25,6 @@ ERROR!!
 PROCESS!
 </div>    
 
-<textarea style="width: 100%; height: 250px; display: none;" id="resources">[]</textarea>
-
 <style>
 
   .building-block{
@@ -54,7 +52,7 @@ PROCESS!
       padding: 5px;
       width: 100%;
       overflow: auto;
-      height: 126px;
+      height: 149px;
       }               
 </style>
 
@@ -85,269 +83,70 @@ PROCESS!
 
     </div>
     <div class="col-4">
-        <div  class="selection-group">
-            <p><strong>&nbsp;&nbsp;Services</strong></p>
-            <select id="source-services" class="form-select" style="width: 100%;" onchange="loadResources();">
-              <option value="">Select Service</option>
-            </select>               
-        </div>          
+        <div style="padding-left: 7px;"><strong>Services (Scroll & Click)</strong></div>
+        <div  class="selection-group" id="services"></div>          
     </div>  
     <div class="col-4">
-        <div id="source-resources" class="selection-group">
-            <strong>&nbsp;&nbsp;Resources (Scroll)</strong>                    
-        </div>          
+        <div style="padding-left: 7px;"><strong>Resources (Scroll & Drag)</strong></div>
+        <div id="source-resources" class="selection-group"></div>          
     </div>      
 
 </div>
 
 <div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
 
-    <div class="col-6">  
+    <div class="col-4">  
         <p><strong>Domains</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%;height: 500px; overflow: auto;" id="areas">
-            - name: Domain One
-              slug: domain-1            
-            - name: Domain Two
-              slug: domain-2 
-            - name: Domain Three
-              slug: domain-3           
+        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="areas">
+        - name: Domain One
+          slug: domain-1            
+        - name: Domain Two
+          slug: domain-2 
+        - name: Domain Three
+          slug: domain-3           
         </textarea>
 
     </div>
-    <div class="col-6">    
+    <div class="col-4">    
         <p><strong>Services</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%; height: 500px; overflow: auto;" id="apis-json">
-          aid: domain-mapping
-          name: Domain Mapping
-          type: Domain
-          description: |-
-              This is a domain map.
-          image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-butterfly-vertical.png
-          tags:
-              - Platform
-              - Builder
-          created: '2025-10-24'
-          modified: '2025-10-24'
-          url: https://github.com/api-evangelist/platform-builder/blob/main/apis.yml
-          specificationVersion: '0.19'
-          common:
-
-            - name: Stripe
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com
-            - name: Shopify
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com
-            - name: BigCommerce
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com    
-            - name: Slack
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com          
-            - name: Zendesk
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                                                      
-            - name: Gmail
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com    
-            - name: Hubspot
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                    
-            - name: MailChimp
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com    
-            - name: Notion
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                    
-            - name: Amazon S3
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com    
-              properties:
-                - type: OpenAPI
-                  url: https://raw.githubusercontent.com/api-evangelist/amazon-web-services/refs/heads/main/openapi/s3-openapi-original.yml
-
-            - name: Snowflake
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com    
-            - name: Google Calendar
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                                    
-            - name: Google Drive
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com   
-            - name: Google Sheets
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com   
-            - name: Google Docs
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                                   
-            - name: Microsoft Teams
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com     
-            - name: Microsoft Graph
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com     
-            - name: Microsoft OneNote
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                                     
-            - name: ServiceNow
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com       
-            - name: Zoom
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com       
-            - name: DataDog
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com     
-            - name: GitHub
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com    
-            - name: Jira
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com    
-            - name: Confluence
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                                    
-            - name: SendGrid
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com  
-            - name: Twilio
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com  
-            - name: Anthropic
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com   
-              properties:
-                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-messages-api-openapi.yml
-                  type: OpenAPI
-                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-models-api-openapi.yml
-                  type: OpenAPI
-                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-message-batches-api-openapi.yml
-                  type: OpenAPI
-                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-files-api-openapi.yml
-                  type: OpenAPI
-                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-admin-api-openapi.yml
-                  type: OpenAPI
-                - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-prompts-api-openapi.yml
-                  type: OpenAPI              
-            - name: OpenAI
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com   
-            - name: Gemini
-              type: Service
-              image: api-evangelist.png
-              tags:
-                - Services
-              url: https://example.com                   
-          maintainers:
-              - FN: Naftiko
-                email: kinlane@naftiko.io
+        {% assign services = site.data.services | jsonify %}
+        <textarea style="border: 1px solid #000; width: 100%; height: 600px; overflow: auto;" id="apis-json">
+          {{ services }}
         </textarea>
-
+        <script>
+          var json = document.getElementById("apis-json").value;
+          document.getElementById("apis-json").value = jsyaml.dump(JSON.parse(json));
+        </script>
     </div>
+    
+    <div class="col-4">    
+      <p><strong>Resources</strong></p>
+      <textarea style="width: 100%; height: 250px;" id="resources">[]</textarea>      
+    </div>
+
 </div>
 
+<br>
 
 <div class="row" style="border: 2px dashed #000; border-radius: 15px; padding: 5px;" id="capture">
     <div class="col">  
         <div class="row" style="border-radius: 15px; padding: 10px;">
 
-            <div class="col-4">        
-                
+            <div class="col-4">  
+
+                <div style="padding-left: 7px;"><strong>Domain One (Drop)</strong></div>
                 <div id="domain-1" class="building-group"></div>        
                 
             </div>
             <div class="col-4">
 
+                <div style="padding-left: 7px;"><strong>Domain Two (Drop)</strong></div>
                 <div id="domain-2" class="building-group"></div>                                         
 
             </div>
             <div class="col-4"> 
-                
+
+                <div style="padding-left: 7px;"><strong>Domain Two (Drop)</strong></div>
                 <div id="domain-3" class="building-group"></div> 
 
             </div> 
@@ -367,10 +166,10 @@ PROCESS!
       var slug = slugify(name);
       //console.log(slug);
       let html = '<div class="building-block tinted" id="' + slug + '">';
-      html += '<a href="' + url + '" target="_blank">';
+      //html += '<a href="' + url + '" target="_blank" style=" font-size: 14px;">';
       html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
-      html += name;
-      html += '</a>';
+      html += '<span style=" font-size: 14px;">' + name + '</span>';
+      //html += '</a>';
       html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
       html += '</div>';
       return html;
@@ -383,6 +182,7 @@ PROCESS!
 
       var apis_json_raw = document.getElementById("apis-json").value;
       var apis_json = jsyaml.load(apis_json_raw);
+      //var apis_json = JSON.parse(apis_json_raw);
 
       apis_json.common = apis_json.common.sort(function(a, b) {
           var keyA = a.name,
@@ -394,27 +194,37 @@ PROCESS!
         
       var select = document.getElementById('source-services');
       show_tags = "Services";
+      var options = '';
+
       //var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
       for (let i = 0; i < apis_json.common.length; i++) {
           for (let j = 0; j < apis_json.common[i].tags.length; j++) {
               if(apis_json.common[i].tags[j] == show_tags){
-                var opt = document.createElement('option');
-                opt.value = apis_json.common[i].name;
-                opt.innerHTML = apis_json.common[i].name;
-                select.appendChild(opt);  
+
+                var image = apis_json.common[i].image;
+                var name = apis_json.common[i].name;
+                var slug = slugify(apis_json.common[i].name);
+                var url = 'https://naftiko.io'
+                
+                let option = '<div class="building-block tinted" id="' + slug + '">';
+                option += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+                option += '<span style=" font-size: 14px;">' + name + '</span>';
+                option += '&nbsp;&nbsp;<a href="#" onclick="loadResources(' + "'" + name + "'" + '); return false;" target="_blank" style=" font-size: 14px;">';
+                option += '(Load)';
+                option += '</a>';                
+                option += '</div>';
+
+                options += option;
+
               }
           }
       }   
+
+      document.getElementById('services').innerHTML = options; 
           
-      new Sortable(document.getElementById('source-services'), {
-          group: 'platform',
-          animation: 150
-      });
-
-
       for (let h = 0; h < areas.length; h++) {
 
-          show_tags = areas[h].name;
+          show_tags = '';
           //console.log(show_tags);
           var html = '<strong>&nbsp;&nbsp;' + show_tags + '</strong>';
           for (let i = 0; i < apis_json.common.length; i++) {
@@ -445,13 +255,13 @@ PROCESS!
   
   populateBuilder();
 
-function buildEntry(){
+function buildEntry(service){
     var resources_raw = document.getElementById("resources").value;
     var resources = jsyaml.load(resources_raw);
 
-    var html = '<strong>&nbsp;&nbsp;Resources (Scroll)</strong>';
+    var html = '';
     for (let i = 0; i < resources.length; i++) {
-      html += makeEntry(resources[i],'drag.png','');
+      html += makeEntry(service + ' ' + resources[i],'drag.png','',);
     } 
     document.getElementById("source-resources").innerHTML = html;  
     new Sortable(document.getElementById('source-resources'), {
@@ -543,11 +353,15 @@ function saveTextAsFile()
         });            
     }
 
-    function loadResources(){
+    function loadResources(service){
+
+      document.getElementById("resources").value = '[]';
+
+      console.log("Loading...");
+      document.getElementById("source-resources").innerHTML = 'LOADING...';
 
       var apis_json_raw = document.getElementById("apis-json").value;
       var apis_json = jsyaml.load(apis_json_raw);
-      var service = document.getElementById("source-services").value;
 
       var services = [];
 
@@ -622,7 +436,7 @@ function saveTextAsFile()
                         var resources_yaml = jsyaml.dump(resources);
                         document.getElementById("resources").value = resources_yaml;
                         
-                        buildEntry();
+                        buildEntry(service);
                       }
                     }
 

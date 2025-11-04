@@ -1,0 +1,236 @@
+aid: signals-companies
+name: Companies
+type: Index
+description: |-
+    This is a list of companies to power Naftiko Signals.
+image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-butterfly-vertical.png
+tags:
+    - Signals
+created: '2025-11-01'
+modified: '2025-11-01'
+url: https://github.com/api-evangelist/platform-builder/blob/main/apis.yml
+specificationVersion: '0.19'
+common:
+
+  - name: Fedex
+    type: Company
+    image: fedex.png
+    tags:
+      - Shipping & Logistics      
+    url: https://example.com  
+
+  - name: UPS
+    type: Company
+    image: ups.png
+    tags:
+      - Shipping & Logistics     
+    url: https://example.com     
+
+  - name: 7-Eleven
+    type: Company
+    image: 7-eleven.png
+    tags:
+      - Convenience Stores     
+    url: https://example.com   
+
+  - name: CircleK
+    type: Company
+    image: circlek.png
+    tags:
+      - Convenience Stores     
+    url: https://example.com    
+
+  - name: BNP Paribas
+    type: Company
+    image: bnp-paribas.png
+    tags:
+      - Banks   
+    url: https://example.com    
+
+  - name: Capital One
+    type: Company
+    image: capital-one.png
+    tags:
+      - Banks   
+    url: https://example.com    
+
+  - name: Nike
+    type: Company
+    image: nike.png
+    tags:
+      - Athletic Apparel
+      - Footwear
+    url: https://example.com   
+
+  - name: Adidas
+    type: Company
+    image: adidas.png
+    tags:
+      - Athletic Apparel
+      - Footwear
+    url: https://example.com    
+
+  - name: Gap
+    type: Company
+    image: gap.png
+    tags:
+      - Apparel Retail
+    url: https://example.com    
+
+  - name: H&M
+    type: Company
+    image: hm.png
+    tags:
+      - Apparel Retail
+    url: https://example.com        
+
+  - name: Cvent
+    type: Company
+    image: cvent.png
+    tags:
+      - Events   
+    url: https://example.com   
+
+  - name: Eventbrite
+    type: Company
+    image: eventbrite.png
+    tags:
+      - Events   
+    url: https://example.com  
+
+  - name: Riot Games
+    type: Company
+    image: riot-games.png
+    tags:
+      - Games 
+    url: https://example.com   
+
+  - name: Blizzard Entertainment
+    type: Company
+    image: blizzard-entertainment.png
+    tags:
+      - Games  
+    url: https://example.com    
+
+  - name: Goldman Sachs
+    type: Company
+    image: goldman-sachs.png
+    tags:
+      - Financial  
+    url: https://example.com   
+
+  - name: JP Morgan Chase
+    type: Company
+    image: jpmorganchase.png
+    tags:
+      - Financial  
+    url: https://example.com   
+
+  - name: Bloomberg
+    type: Company
+    image: bloomberg.png
+    tags:
+      - Financial  
+    url: https://example.com    
+
+  - name: ADP
+    type: Company
+    image: adp.png
+    tags:
+      - Human Resources  
+    url: https://example.com      
+
+  - name: Allianz
+    type: Company
+    image: allianz.png
+    tags:
+      - Financial  
+    url: https://example.com   
+
+  - name: Costco
+    type: Company
+    image: costco.png
+    tags:
+      - Retail  
+    url: https://example.com    
+
+  - name: Walmart
+    type: Company
+    image: walmart.png
+    tags:
+      - Retail  
+    url: https://example.com    
+
+  - name: Amadeus
+    type: Company
+    image: amadeus.png
+    tags:
+      - Travel  
+    url: https://example.com  
+
+  - name: EY
+    type: Company
+    image: ey.png
+    tags:
+      - Consulting  
+    url: https://example.com   
+
+  - name: Booz Allen
+    type: Company
+    image: booz-allen.png
+    tags:
+      - Consulting  
+    url: https://example.com  
+
+  - name: Accord
+    type: Company
+    image: accord.png
+    tags:
+      - Sales  
+    url: https://example.com   
+
+  - name: McDonalds
+    type: Company
+    image: mcdonalds.png
+    tags:
+      - Fast Food
+    url: https://example.com    
+
+  - name: Chick-Fila
+    type: Company
+    image: chick-fila.png
+    tags:
+      - Fast Food
+    url: https://example.com     
+
+  - name: Lego
+    type: Company
+    image: lego.png
+    tags:
+      - Toys 
+    url: https://example.com    
+
+  - name: Mattel
+    type: Company
+    image: mattel.png
+    tags:
+      - Toys 
+    url: https://example.com   
+
+  - name: Ford
+    type: Company
+    image: ford.png
+    tags:
+      - Automobiles
+    url: https://example.com                    
+
+  - name: General Motors
+    type: Company
+    image: gm.png
+    tags:
+      - Automobiles
+    url: https://example.com                        
+
+maintainers:
+    - FN: Naftiko
+      email: kinlane@naftiko.io

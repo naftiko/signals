@@ -1,4 +1,261 @@
 ---
 layout: page
-title: Investments
+title: Companies
 ---
+<script>
+    function slugify(str) {
+        return String(str)
+            .normalize('NFKD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .trim() 
+            .toLowerCase()
+            .replace(/[^a-z0-9 -]/g, '')
+            .replace(/\s+/g, '-')
+            .replace(/-+/g, '-');
+    }    
+
+    function show(id) {
+
+        if (document.getElementById(id).style.display == '') {
+            document.getElementById(id).style.display = 'none';
+        }
+        else {
+            document.getElementById(id).style.display = '';
+        }
+
+    }
+</script>
+
+<div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+    You have added a new service.
+</div>
+<div id="error-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+    ERROR!!
+</div>
+<div id="process-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+    PROCESS!
+</div>
+
+<style>
+    .building-block {
+        border: 2px dashed #000;
+        border-radius: 5px;
+        margin: 5px;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+    .building-group {
+        background-color: #FFF;
+        border: 3px solid #000;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .selection-group {
+        background-color: #FFF;
+        border: 3px solid #000;
+        border-radius: 10px;
+        margin: 5px;
+        padding: 5px;
+        width: 100%;
+        overflow: auto;
+        height: 149px;
+    }
+</style>
+
+<h2>Investments</h2>
+
+<div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
+
+    <div class="col-6">
+        <p><strong>Companies</strong></p>
+        {% assign companies = site.data.companies | jsonify %}
+        <textarea style="border: 1px solid #000; width: 100%; height: 300px; overflow: auto;" id="companies">
+        {{ companies }}
+        </textarea>
+        <script>
+            var json = document.getElementById("companies").value;
+            document.getElementById("companies").value = jsyaml.dump(JSON.parse(json));
+        </script>
+    </div>
+    <div class="col-6">
+        <p><strong>Industries</strong></p>
+        {% assign industries = site.data.industries %}
+        <textarea style="border: 1px solid #000; width: 100%; height: 300px; overflow: auto;" id="industries">
+        {{ industries | jsonify }}
+        </textarea>
+        <script>
+            var json = document.getElementById("industries").value;
+            document.getElementById("industries").value = jsyaml.dump(JSON.parse(json));
+        </script>
+    </div>
+    {% assign investments = site.data.investments %}
+    {% for investment in investments%}
+        <div class="col-6">
+            <p><strong>{{ investment[0] }}</strong></p>
+            <textarea style="border: 1px solid #000; width: 100%; height: 300px; overflow: auto;" id="{{ investment[0] }}">
+            {{ investment[1].scoring | jsonify }}
+            </textarea>
+            <script>
+                var json = document.getElementById("{{ investment[0] }}").value;
+                document.getElementById("{{ investment[0] }}").value = jsyaml.dump(JSON.parse(json));
+            </script>
+        </div>        
+    {% endfor %}    
+
+</div>
+
+<center>
+<div class="dropdown" style="margin-bottom: 15px;">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Industries</button>
+  <ul class="dropdown-menu" id="industry-select"></ul>
+</div>    
+</center>
+
+<script>
+    var industries_raw = document.getElementById("industries").value;
+    var industries = jsyaml.load(industries_raw);    
+    industries.sort();
+    var industry_list = '';
+    console.log(industries);
+    for (let i = 0; i < industries.length; i++) {
+        industry_list += '<li><a class="dropdown-item" href="#" onclick="changeIndustry(' + "'" +  industries[i] + "'" + ')">' + industries[i] + '</a></li>';
+    }
+    document.getElementById("industry-select").innerHTML = industry_list;
+
+
+        var config = {
+            type: 'bar',
+            data: {
+                labels: ['API', 'SaaS', 'AI', 'Automation', 'Containers', 'Observability', 'Integrations', 'Virtualization', 'Data', 'Databases', 'Platform', 'Operations', 'Event Driven', 'Alignment', 'Open Source', 'Standardization', 'Patterns', 'Specifications', 'Governance', 'Security'],
+                datasets: [{
+                    label: 'Ford',
+                    data: [19, 0, 13, 43, 4, 4, 96, 11, 12, 14, 3, 0, 0, 8, 4, 2, 22, 32, 0, 0, 0, 74],
+                    backgroundColor: [
+                        'rgba(220, 20, 60, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(220, 20, 60, 1)',
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: 'GM',
+                    data: [17, 0, 15, 40, 3, 4, 23, 5, 85, 11, 11, 11, 2, 0, 0, 8, 4, 0, 22, 23, 54],
+                    backgroundColor: [
+                        'rgba(34, 139, 34, 1)'
+                    ],
+                    borderColor: [
+                        'rgba(34, 139, 34, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y', // This makes it horizontal
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        stacked: true,
+                        title: {
+                            display: true
+                        },
+                        ticks: {
+                            font: {
+                                weight: 'bold',
+                                size: 18
+                            }
+                        }
+                    },
+                    y: {
+                        stacked: true,
+                        title: {
+                            display: true
+                        },
+                        ticks: {
+                            font: {
+                                weight: 'bold',
+                                size: 18
+                            }
+                        }
+                    }
+                }
+            }
+        };     
+</script>
+
+<div id="chartContainer">
+    <canvas id="myChart" style="height: 700px; width: 100%;"></canvas>
+</div>
+
+<script>
+
+    function changeIndustry(industry){
+
+        console.log(industry);
+
+        var all_companies = [];
+
+        var companies_raw = document.getElementById("companies").value;
+        var companies = jsyaml.load(companies_raw);    
+        //console.log(companies);
+        for (let i = 0; i < companies.common.length; i++) {
+            for (let j = 0; j < companies.common[i].tags.length; j++) {
+                //console.log(companies.common[i].tags[j].trim() + ' == ' + industry.trim());
+                if(companies.common[i].tags[j].trim() == industry.trim()){
+                    all_companies.push(companies.common[i]);
+                }
+            }
+        }
+
+        config.data.datasets = [];
+        for (let i = 0; i < all_companies.length; i++) {
+            var name = all_companies[i].name;
+            var slug = slugify(name);
+            var scoring_raw = document.getElementById(slug).value;
+            var scoring = jsyaml.load(scoring_raw);                
+
+            var this_score = {};
+            this_score.label = name;
+            this_score.data = [scoring.api,scoring.saas,scoring.ai,scoring.automation,scoring.containers,scoring.observability,scoring.integrations,scoring.virtualization,scoring.data,scoring.databases,scoring.platform,scoring.operations,scoring.eventDriven,scoring.alignment,scoring.openSource,scoring.standardization,scoring.patterns,scoring.specifications,scoring.governance,scoring.security,scoring.cloud];
+
+            if(i==0){
+                var color = 'rgba(220, 20, 60, 1)';
+            }
+            if(i==1){
+                var color = 'rgba(34, 139, 34, 1)';
+            }    
+            if(i==2){
+                var color = 'rgba(0, 0, 139, 1)';
+            }                       
+
+            this_score.backgroundColor =  [color];
+            this_score.borderColor =  [color];
+            this_score.borderWidth = 1; 
+            config.data.datasets.push(this_score);
+
+        }
+
+        console.log(config);        
+
+        const chart = Chart.getChart('myChart');
+        if (chart) {
+            chart.destroy();
+        }        
+        var ctx = document.getElementById('myChart').getContext('2d');
+        myChart = new Chart(ctx, config);        
+
+    }  
+
+    function showChart(config){
+        var ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, config);
+    }
+
+    showChart(config);
+</script>

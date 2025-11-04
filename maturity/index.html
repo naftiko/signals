@@ -2,9 +2,7 @@
 layout: page
 title: Maturity
 ---
-
 <script>
-
     function show(id){
 
         if(document.getElementById(id).style.display == ''){
@@ -16,6 +14,7 @@ title: Maturity
 
     }
 </script>
+
 <div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
     You have added a new service.
 </div>
@@ -28,42 +27,38 @@ PROCESS!
 
 <style>
 
-    .building-block{
-        border: 2px dashed #000;
-        border-radius: 5px;
-        margin: 5px; 
-        padding: 5px;
-        font-weight: bold;
-    }
+  .building-block{
+      border: 2px dashed #000;
+      border-radius: 5px;
+      margin: 5px; 
+      padding: 5px;
+      font-weight: bold;
+  }
 
-    .building-group {
-        background-color: #FFF;
-        border: 3px solid #000;
-        border-radius: 10px;
-        margin: 5px; 
-        padding: 10px;
-        width: 100%;
-        }    
-        
-    .selection-group {
-        background-color: #FFF;
-        border: 3px solid #000;
-        border-radius: 10px;
-        margin: 5px; 
-        padding: 5px;
-        width: 100%;
-        overflow: auto;
-        height: 126px;
-        }          
-
-  .popover{
-      max-width: 750px;;
-  }            
+  .building-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 0px; 
+      padding: 10px;
+      height: 100%;
+      width: 100%;
+      }    
+      
+  .selection-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 5px;
+      width: 100%;
+      overflow: auto;
+      height: 149px;
+      }               
 </style>
 
-<h2>Service Maturity</h2>
-<p>Visualize the maturity of the services you depend on within a domain using a Wardley Map, considering your overall priorities and what your next investments are.</p>
-
+<h2>Maturity</h2>
+<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
 
 <div class="row">
     <div class="col-4">   
@@ -89,84 +84,143 @@ PROCESS!
 
     </div>
     <div class="col-8">
-        <div id="source-services" class="selection-group">
-            <strong>&nbsp;&nbsp;Services (Scroll)</strong>                    
-        </div>          
-    </div>  
+        <div style="padding-left: 7px;"><strong>Services (Scroll & Click)</strong></div>
+        <div  class="selection-group" id="services"></div>          
+    </div>    
 
 </div>
 
 <div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
 
-    <div class="col-6">  
+    <div class="col-3">  
         <p><strong>Domains</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%;height: 500px; overflow: auto;" id="areas">
-            - name: Domain One
-              slug: domain-1            
-            - name: Domain Two
-              slug: domain-2 
-            - name: Domain Three
-              slug: domain-3           
+        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="areas">
+        - name: Domain One
+          slug: domain-1            
+        - name: Domain Two
+          slug: domain-2 
+        - name: Domain Three
+          slug: domain-3    
+        - name: Domain Four
+          slug: domain-4           
+        - name: Domain Five
+          slug: domain-5 
+        - name: Domain Six
+          slug: domain-6 
+        - name: Domain Seven
+          slug: domain-7            
+        - name: Domain Eight
+          slug: domain-8 
+        - name: Domain Nine
+          slug: domain-9   
+        - name: Domain Ten
+          slug: domain-10
+        - name: Domain Eleven
+          slug: domain-11
+        - name: Domain Twelve
+          slug: domain-12                                                       
         </textarea>
 
     </div>
-    <div class="col-6">    
+    <div class="col-3">    
         <p><strong>Services</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%; height: 500px; overflow: auto;" id="apis-json">
-          aid: domain-mapping
-          name: Domain Mapping
-          type: Domain
-          description: |-
-              This is a domain map.
-          image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-butterfly-vertical.png
-          tags:
-              - Platform
-              - Builder
-          created: '2025-10-24'
-          modified: '2025-10-24'
-          url: https://github.com/api-evangelist/platform-builder/blob/main/apis.yml
-          specificationVersion: '0.19'
-          common:
-
-              - name: Service One
-                type: Service
-                image: api-evangelist.png
-                tags:
-                  - Service
-                url: https://exmaple.com
-
-          maintainers:
-              - FN: Naftiko
-                email: kinlane@naftiko.io
+        {% assign services = site.data.services | jsonify %}
+        <textarea style="border: 1px solid #000; width: 100%; height: 600px; overflow: auto;" id="apis-json">
+          {{ services }}
         </textarea>
-
+        <script>
+          var json = document.getElementById("apis-json").value;
+          document.getElementById("apis-json").value = jsyaml.dump(JSON.parse(json));
+        </script>
     </div>
+    
 </div>
 
+<br>
 
-<div class="row" style="border: 2px dashed #000; border-radius: 15px; padding: 5px;" id="capture">
-    <div class="col">  
-        <div class="row" style="border-radius: 15px; padding: 10px;">
+<table style="width: 100%; height: 100%;" id="capture">
+    <tr>
+    <td style="">
+        <table style="width: 100%; height: 100%;">
+            <tr>
+                <td style="vertical-align: top; text-align: right;">
+                    <span style="writing-mode: vertical-rl;text-orientation: sideways; text-align: left;">&#8592;Visible</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: bottom; text-align: right;">       
+                    <span style="writing-mode: vertical-rl;text-orientation: sideways; text-align: right; vertical-align: bottom">Invisible&#8594;</span><br>
+                </td>
+            </tr>
+        </table>        
+    </td>
+   <td width="95%">
 
-            <div class="col-4">        
+        <div class="row" style="padding: 5px;">
+            <div class="col">  
+                <div class="row" style="border-radius: 15px; padding: 10px;">
+
+                    <div class="col-3">  
+                        <div id="domain-1" class="building-group"></div>                        
+                    </div>
+                    <div class="col-3">
+                        <div id="domain-2" class="building-group"></div>                                         
+                    </div>
+                    <div class="col-3"> 
+                        <div id="domain-3" class="building-group"></div> 
+                    </div> 
+                    <div class="col-3"> 
+                        <div id="domain-4" class="building-group"></div> 
+                    </div>             
+
+                </div>
+
+                <div class="row" style="border-radius: 15px; padding: 10px;">
+
+                    <div class="col-3">  
+                        <div id="domain-5" class="building-group"></div>                    
+                    </div>
+                    <div class="col-3">
+                        <div id="domain-6" class="building-group"></div>                                         
+                    </div>
+                    <div class="col-3"> 
+                        <div id="domain-7" class="building-group"></div> 
+                    </div> 
+                    <div class="col-3"> 
+                        <div id="domain-8" class="building-group"></div> 
+                    </div>             
+
+                </div>
                 
-                <div id="domain-1" class="building-group"></div>        
-                
+                <div class="row" style="border-radius: 15px; padding: 10px;">
+
+                    <div class="col-3">  
+                        <div id="domain-9" class="building-group"></div>                        
+                    </div>
+                    <div class="col-3">
+                        <div id="domain-10" class="building-group"></div>                                         
+                    </div>
+                    <div class="col-3"> 
+                        <div id="domain-11" class="building-group"></div> 
+                    </div> 
+                    <div class="col-3"> 
+                        <div id="domain-12" class="building-group"></div> 
+                    </div>             
+
+                </div>        
+
             </div>
-            <div class="col-4">
-
-                <div id="domain-2" class="building-group"></div>                                         
-
-            </div>
-            <div class="col-4"> 
-                
-                <div id="domain-3" class="building-group"></div> 
-
-            </div> 
-
         </div>
-    </div>
-</div>
+        <div class="row" style=border: 2px dashed #000; border-radius: 15px; padding: 5px;">
+            <div class="col-3" style="text-align: center;">Genesis&#8594;</div>
+            <div class="col-3" style="text-align: center;">Custom Built&#8594;</div>
+            <div class="col-3" style="text-align: center;">Product&#8594;</div> 
+            <div class="col-3" style="text-align: center;">Commodity&#8594;</div> 
+        </div>
+
+    </td>
+    </tr>
+</table>
 
 <script>
 
@@ -178,7 +232,13 @@ PROCESS!
     function makeEntry(name,image,url){
       var slug = slugify(name);
       //console.log(slug);
-      let html = '<div class="building-block tinted" id="' + slug + '"><a href="' + url + '" target="_blank"><img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">' + name + '</a><a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a></div>';
+      let html = '<div class="building-block tinted" id="' + slug + '">';
+      //html += '<a href="' + url + '" target="_blank" style=" font-size: 14px;">';
+      html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+      html += '<span style=" font-size: 14px;">' + name + '</span>';
+      //html += '</a>';
+      html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
+      html += '</div>';
       return html;
     }
 
@@ -189,6 +249,7 @@ PROCESS!
 
       var apis_json_raw = document.getElementById("apis-json").value;
       var apis_json = jsyaml.load(apis_json_raw);
+      //var apis_json = JSON.parse(apis_json_raw);
 
       apis_json.common = apis_json.common.sort(function(a, b) {
           var keyA = a.name,
@@ -198,31 +259,43 @@ PROCESS!
           return 0;
       });  
         
+      var select = document.getElementById('source-services');
       show_tags = "Services";
-      var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
+      var options = '';
+
+      //var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
       for (let i = 0; i < apis_json.common.length; i++) {
-          var match = 0;
           for (let j = 0; j < apis_json.common[i].tags.length; j++) {
               if(apis_json.common[i].tags[j] == show_tags){
-                  match = 1;
+
+                var image = apis_json.common[i].image;
+                var name = apis_json.common[i].name;
+                var slug = slugify(apis_json.common[i].name);
+                var url = 'https://naftiko.io'
+                
+                let option = '<div class="building-block tinted" id="' + slug + '">';
+                //option += '<img src="/assets/img/icons/gear.png" width="20" style="margin: 0px 5px 3px 0px;">';
+                option += '<img src="/assets/img/icons/' + image + '" width="25" style="margin: 0px 5px 3px 0px;">';
+                option += '<span style=" font-size: 14px;">' + name + '</span>';             
+                option += '</div>';
+
+                options += option;
+
               }
           }
-          if(match == 1){
-              html += makeEntry(apis_json.common[i].name,apis_json.common[i].image,apis_json.common[i].url);
-          }
-      } 
-      document.getElementById("source-services").innerHTML = html;        
+      }   
 
+      document.getElementById('services').innerHTML = options;
+
+    new Sortable(document.getElementById('services'), {
+        group: 'platform',
+        animation: 150
+    });       
           
-      new Sortable(document.getElementById('source-services'), {
-          group: 'platform',
-          animation: 150
-      });
-
-
       for (let h = 0; h < areas.length; h++) {
 
-          show_tags = areas[h].name;
+          show_tags = '';
+          //console.log(show_tags);
           var html = '<strong>&nbsp;&nbsp;' + show_tags + '</strong>';
           for (let i = 0; i < apis_json.common.length; i++) {
               var match = 0;
@@ -250,7 +323,22 @@ PROCESS!
 
     }
   
-    populateBuilder();
+  populateBuilder();
+
+function buildEntry(service){
+    var resources_raw = document.getElementById("resources").value;
+    var resources = jsyaml.load(resources_raw);
+
+    var html = '';
+    for (let i = 0; i < resources.length; i++) {
+      html += makeEntry(service + ' ' + resources[i],'drag.png','',);
+    } 
+    document.getElementById("source-resources").innerHTML = html;  
+    new Sortable(document.getElementById('source-resources'), {
+        group: 'platform',
+        animation: 150
+    });       
+  }
 
 function saveScreenshotAsImage(canvas)
     {
@@ -320,7 +408,7 @@ function saveTextAsFile()
             populateBuilder();
             }
             else{
-            console.log("NOT");
+            //console.log("NOT");
             }
 
         };
@@ -333,5 +421,106 @@ function saveTextAsFile()
             document.body.appendChild(canvas)                      
             saveScreenshotAsImage(canvas);
         });            
+    }
+
+    function loadResources(service){
+
+      document.getElementById("resources").value = '[]';
+
+      console.log("Loading...");
+      document.getElementById("source-resources").innerHTML = 'LOADING...';
+
+      var apis_json_raw = document.getElementById("apis-json").value;
+      var apis_json = jsyaml.load(apis_json_raw);
+
+      var services = [];
+
+      for (let h = 0; h < apis_json.common.length; h++) {
+        if(apis_json.common[h].name == service){
+          services.push(apis_json.common[h]);
+        }
+      }
+
+      for (let h = 0; h < services.length; h++) {
+        for (let i = 0; i < services[h].properties.length; i++) {
+
+          if(services[h].properties[i].type == 'OpenAPI'){
+
+            var openapi_url = services[h].properties[i].url       
+            var name = services[h].name;
+            //console.log(name);
+            //console.log(openapi_url);
+
+            var pull_url = openapi_url;
+            var user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    "user-agent": user_agent             
+                }
+            };  
+
+            fetch(pull_url,options)
+              .then(function(response) {
+                  if (!response.ok) {
+                      console.log('Error with Status Code: ' + response.status);
+                  }
+                  response.text().then(function(openapi_raw) {   
+
+                    //console.log(openapi_raw);
+
+                    var openapi = jsyaml.load(openapi_raw);
+
+                    for (const [path, method] of Object.entries(openapi.paths)) {   
+                      for (const [verb, operation] of Object.entries(method)) {                      
+
+                        var resources_raw = document.getElementById("resources").value;
+                        var resources = jsyaml.load(resources_raw);
+
+                        resources[operation.operationId] = operation;
+                        if(operation.tags){
+                          for (let a = 0; a < operation.tags.length; a++) {
+                            var already = 0;
+                             for (let b = 0; b < resources.length; b++) {
+                                if(resources[b] == operation.tags[a]){
+                                  already = 1;
+                                }
+                             }
+                          if(already == 0){
+                            var this_tag = operation.tags[a];
+                            this_tag = this_tag.replaceAll(".","");
+                            this_tag = this_tag.replaceAll("Restore ","");
+                            this_tag = this_tag.replaceAll("Update ","");
+                            this_tag = this_tag.replaceAll("Download ","");
+                            this_tag = this_tag.replaceAll("Select ","");
+                            this_tag = this_tag.replaceAll("Create ","");
+                            this_tag = this_tag.replaceAll("A ","");
+                            this_tag = this_tag.trim();
+                            resources.push(this_tag);
+                            }
+                          }
+                        }
+
+                        resources.sort();
+                        var resources_yaml = jsyaml.dump(resources);
+                        document.getElementById("resources").value = resources_yaml;
+                        
+                        buildEntry(service);
+                      }
+                    }
+
+
+                  });
+                })
+                .catch(function(err) {
+                    console.log('Error: ' + err);
+            });
+
+          }    
+
+        }
+      }
+
     }
 </script>

@@ -2,5 +2,272 @@
 layout: page
 title: Services
 ---
+<script>
+    function show(id){
 
-List of Services
+        if(document.getElementById(id).style.display == ''){
+            document.getElementById(id).style.display = 'none';
+        }
+        else{
+            document.getElementById(id).style.display = '';
+        }
+
+    }
+</script>
+
+<div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+    You have added a new service.
+</div>
+<div id="error-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+ERROR!!
+</div>
+<div id="process-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+PROCESS!
+</div>    
+
+<style>
+
+  .building-block{
+      border: 2px dashed #000;
+      border-radius: 5px;
+      margin: 5px; 
+      padding: 5px;
+      font-weight: bold;
+  }
+
+  .building-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 10px;
+      width: 100%;
+      }    
+      
+  .selection-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 5px;
+      width: 100%;
+      overflow: auto;
+      height: 149px;
+      }               
+</style>
+
+<h2>Services</h2>
+<p>These are the services available as part of this Naftiko Signals, allow the APIs for each service to be used as part of mapping and understnading the landscape.</p>
+<br>
+<div class="row">
+    <div class="col">   
+
+        <div class="row">
+
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
+                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
+            </div>
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
+                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
+            </div>
+
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
+              <img src="/assets/img/icons/download-icon.png" width="50">Download          
+            </div>
+            
+            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
+                <input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)">
+            </div>
+
+         </div>
+
+    </div>
+
+</div>
+
+<div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
+
+    <div class="col-12">    
+        <p><strong>Services</strong></p>
+        {% assign services = site.data.services | jsonify %}
+        <textarea style="border: 1px solid #000; width: 100%; height: 300px; overflow: auto;" id="apis-json">
+          {{ services }}
+        </textarea>
+        <script>
+          var json = document.getElementById("apis-json").value;
+          document.getElementById("apis-json").value = jsyaml.dump(JSON.parse(json));
+        </script>
+    </div>
+
+</div>
+
+<br>
+
+<div class="row" style="padding: 5px;" id="capture">
+    <div class="col" id="services"></div>
+</div>
+
+<script>
+
+    function makeEntry(name,image,url){
+      var slug = slugify(name);
+      //console.log(slug);
+      let html = '<div class="building-block tinted" id="' + slug + '">';
+      //html += '<a href="' + url + '" target="_blank" style=" font-size: 14px;">';
+      html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+      html += '<span style=" font-size: 14px;">' + name + '</span>';
+      //html += '</a>';
+      html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
+      html += '</div>';
+      return html;
+    }
+
+    function populateBuilder(){
+
+      var apis_json_raw = document.getElementById("apis-json").value;
+      var apis_json = jsyaml.load(apis_json_raw);
+      //var apis_json = JSON.parse(apis_json_raw);
+
+      apis_json.common = apis_json.common.sort(function(a, b) {
+          var keyA = a.name,
+              keyB = b.name;
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+      });  
+        
+      var select = document.getElementById('source-services');
+      show_tags = "Services";
+      var options = '';
+
+      //var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
+      for (let i = 0; i < apis_json.common.length; i++) {
+          for (let j = 0; j < apis_json.common[i].tags.length; j++) {
+              if(apis_json.common[i].tags[j] == show_tags){
+
+                var image = apis_json.common[i].image;
+                var name = apis_json.common[i].name;
+                var slug = slugify(apis_json.common[i].name);
+                var url = 'https://naftiko.io'
+                
+                let option = '<div class="building-block tinted" id="' + slug + '">';
+                option += '<img src="/assets/img/icons/' + image + '" width="27" style="margin: 0px 5px 3px 0px;">';
+                option += '<span style=" font-size: 18px;">' + name + '</span>';               
+                option += '</div>';
+
+                options += option;
+
+              }
+          }
+      }   
+
+      document.getElementById('services').innerHTML = options;
+
+      new Sortable(document.getElementById("services"), {
+          group: 'platform',
+          animation: 150
+      });            
+
+    }
+  
+  populateBuilder();
+
+function buildEntry(service){
+    var resources_raw = document.getElementById("resources").value;
+    var resources = jsyaml.load(resources_raw);
+
+    var html = '';
+    for (let i = 0; i < resources.length; i++) {
+      html += makeEntry(service + ' ' + resources[i],'drag.png','',);
+    } 
+    document.getElementById("source-resources").innerHTML = html;  
+    new Sortable(document.getElementById('source-resources'), {
+        group: 'platform',
+        animation: 150
+    });       
+  }
+
+function saveScreenshotAsImage(canvas)
+    {
+        var fileNameToSaveAs = "platform-builder-screenshot.jpg";
+        var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null)
+        {
+        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
+        }
+        else
+        {
+        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        }
+    
+        downloadLink.click();
+    }          
+
+function saveTextAsFile()
+    {
+        var fileNameToSaveAs = "platform-builder.yml";
+        var apis_json = document.getElementById("apis-json").value;
+        var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null)
+        {
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+        }
+        else
+        {
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        }
+    
+        downloadLink.click();
+    }        
+    
+    function readFile(input) {
+        if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const fileContent = e.target.result;
+            try {
+            var apis_json = JSON.parse(fileContent);
+            var format = "json";
+            } catch (error) {
+                try {
+                var apis_json = jsyaml.load(fileContent);
+                var format = "yaml";
+            } catch (error) {
+                var format = "unknown";
+            } 
+            } 
+            
+            if(format == 'json' || format == 'yaml'){                       
+            document.getElementById("apis-json").value = jsyaml.dump(apis_json);
+            populateBuilder();
+            }
+            else{
+            //console.log("NOT");
+            }
+
+        };
+
+        reader.readAsText(input.files[0]); 
+        }
+    }
+    function takeScreenshot(){
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)                      
+            saveScreenshotAsImage(canvas);
+        });            
+    }
+
+</script>

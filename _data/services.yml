@@ -1,0 +1,338 @@
+aid: signals-services
+name: Services
+type: Index
+description: |-
+    This is a list of services to power Naftiko Signals.
+image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-butterfly-vertical.png
+tags:
+    - Signals
+created: '2025-10-24'
+modified: '2025-10-24'
+url: https://github.com/api-evangelist/platform-builder/blob/main/apis.yml
+specificationVersion: '0.19'
+common:
+
+  - name: Stripe
+    type: Service
+    image: stripe.png
+    pricing:
+      - Usage
+      - Subscription
+      - Percentage
+      - Contract
+    tags:
+      - Services
+    url: https://example.com
+  - name: Shopify
+    type: Service
+    image: shopify.png
+    pricing:
+      - Free
+      - Trial
+      - Tier
+      - Subscription
+      - Percentage
+    tags:
+      - Services
+    url: https://example.com
+  - name: BigCommerce
+    type: Service
+    image: bigcommerce.png
+    pricing:
+      - Trial      
+      - Request        
+      - Tier
+      - Subscription
+      - Percentage       
+    tags:
+      - Services
+    url: https://example.com    
+  - name: Slack
+    type: Service
+    image: slack.png
+    pricing:
+      - Free
+      - User
+      - Usage
+      - Tier
+      - Subscription
+    tags:
+      - Services
+    url: https://example.com          
+  - name: Zendesk
+    type: Service
+    image: zendesk.png
+    pricing:
+      - User
+      - Usage
+      - Subscription
+    tags:
+      - Services
+    url: https://example.com                                                      
+  - name: Gmail
+    type: Service
+    image: gmail.png
+    pricing:
+      - User
+      - Usage
+      - Subscription  
+    tags:
+      - Services
+    url: https://example.com    
+  - name: Hubspot
+    type: Service
+    image: hubspot.png
+    pricing:
+      - Free
+      - User
+      - Usage
+      - Credits
+      - Subscription
+    tags:
+      - Services
+    url: https://example.com                    
+  - name: MailChimp
+    type: Service
+    image: mailchimp.png
+    pricing:
+      - Free
+      - Trial
+      - Usage
+      - Subscription
+    tags:
+      - Services
+    url: https://example.com    
+  - name: Notion
+    type: Service
+    image: notion.png
+    pricing:
+      - Free
+      - Trial
+      - User
+      - Usage
+      - Subscription
+    tags:
+      - Services
+    url: https://example.com                    
+  - name: Amazon S3
+    type: Service
+    image: amazon-s3.png
+    pricing:
+      - Free
+      - Usage 
+      - Region
+    tags:
+      - Services
+    url: https://example.com    
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/amazon-web-services/refs/heads/main/openapi/s3-openapi-original.yml
+  - name: Snowflake
+    type: Service
+    image: snowflake.png
+    pricing:
+      - User
+      - Usage
+      - Credits
+      - Region  
+    tags:
+      - Services
+    url: https://example.com    
+  - name: Google Calendar
+    type: Service
+    image: google-calendar.png
+    pricing:
+      - User
+      - Usage
+      - Subscription  
+    tags:
+      - Services
+    url: https://example.com                                    
+  - name: Google Drive
+    type: Service
+    image: google-drive.png
+    pricing:
+      - User
+      - Usage
+      - Subscription  
+    tags:
+      - Services
+    url: https://example.com   
+  - name: Google Sheets
+    type: Service
+    image: google-sheets.png
+    pricing:
+      - User
+      - Usage
+      - Subscription  
+    tags:
+      - Services
+    url: https://example.com   
+  - name: Google Docs
+    type: Service
+    image: google-docs.png
+    pricing:
+      - User
+      - Usage
+      - Subscription 
+    tags:
+      - Services
+    url: https://example.com                                   
+  - name: Microsoft Teams
+    type: Service
+    image: microsoft-teams.png
+    pricing:
+      - User
+      - Usage
+      - Subscription
+    tags:
+      - Services
+    url: https://example.com     
+  - name: Microsoft Graph
+    type: Service
+    image: microsoft-graph.png
+    pricing:
+      - User
+      - Usage 
+    tags:
+      - Services
+    url: https://example.com     
+  - name: Microsoft OneNote
+    type: Service
+    image: microsoft-onenote.png
+    pricing:
+      - User
+      - Usage    
+    tags:
+      - Services
+    url: https://example.com                                     
+  - name: ServiceNow
+    type: Service
+    image: servicenow.png
+    pricing:
+      - Request 
+    tags:
+      - Services
+    url: https://example.com       
+  - name: Zoom
+    type: Service
+    image: zoom.png
+    pricing:
+      - User
+      - Usage
+      - Subscription
+    tags:
+      - Services
+    url: https://example.com       
+  - name: DataDog
+    type: Service
+    image: datadog.png
+    pricing:
+      - User
+      - Usage
+      - Subscription  
+    tags:
+      - Services
+    url: https://example.com     
+  - name: GitHub
+    type: Service
+    image: github.png
+    pricing:
+      - User
+      - Usage
+      - Subscription    
+    tags:
+      - Services
+    url: https://example.com    
+  - name: Jira
+    type: Service
+    image: jira.png
+    pricing:
+      - User
+      - Usage
+      - Subscription  
+      - Tier  
+    tags:
+      - Services
+    url: https://example.com    
+  - name: Confluence
+    type: Service
+    image: confluence.png
+    pricing:
+      - User
+      - Usage
+      - Subscription  
+      - Tier    
+    tags:
+      - Services
+    url: https://example.com                                    
+  - name: SendGrid
+    type: Service
+    image: sendgrid.png
+    pricing:
+      - Free
+      - Usage   
+    tags:
+      - Services
+    url: https://example.com  
+  - name: Twilio
+    type: Service
+    image: twilio.png
+    pricing:
+      - Free
+      - Usage    
+    tags:
+      - Services
+    url: https://example.com  
+  - name: Anthropic
+    type: Service
+    image: anthropic.png
+    pricing:
+      - Free
+      - User
+      - Usage
+      - Model
+      - Token
+    tags:
+      - Services
+    url: https://example.com   
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-messages-api-openapi.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-models-api-openapi.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-message-batches-api-openapi.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-files-api-openapi.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-admin-api-openapi.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/anthropic/refs/heads/main/openapi/anthropic-prompts-api-openapi.yml
+        type: OpenAPI              
+  - name: OpenAI
+    type: Service
+    image: openai.png
+    pricing:
+      - Free
+      - User
+      - Usage
+      - Model
+      - Token  
+    tags:
+      - Services
+    url: https://example.com   
+  - name: Gemini
+    type: Service
+    image: gemini.png
+    pricing:
+      - Free
+      - User
+      - Usage
+      - Model
+      - Token 
+    tags:
+      - Services
+    url: https://example.com                   
+maintainers:
+    - FN: Naftiko
+      email: kinlane@naftiko.io

@@ -1,0 +1,456 @@
+---
+layout: page
+title: Capabilities
+---
+<script>
+    function show(id){
+
+        if(document.getElementById(id).style.display == ''){
+            document.getElementById(id).style.display = 'none';
+        }
+        else{
+            document.getElementById(id).style.display = '';
+        }
+
+    }
+</script>
+
+<div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+    You have added a new service.
+</div>
+<div id="error-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+ERROR!!
+</div>
+<div id="process-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
+PROCESS!
+</div>    
+
+<style>
+
+  .building-block{
+      border: 2px dashed #000;
+      border-radius: 5px;
+      margin: 5px; 
+      padding: 5px;
+      font-weight: bold;
+  }
+
+  .building-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 10px;
+      width: 100%;
+      }    
+      
+  .selection-group {
+      background-color: #FFF;
+      border: 3px solid #000;
+      border-radius: 10px;
+      margin: 5px; 
+      padding: 5px;
+      width: 100%;
+      overflow: auto;
+      height: 149px;
+      }               
+</style>
+
+<h2>Capability Crafting</h2>
+<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
+
+<div class="row">
+    <div class="col-4">   
+
+        <div class="row">
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
+                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
+            </div>
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
+                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
+            </div>
+
+            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
+              <img src="/assets/img/icons/download-icon.png" width="50">Download          
+            </div>
+            
+        </div>
+         <div class="row">
+            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
+                <center><input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)"></center>
+            </div>
+         </div>
+
+    </div>
+    <div class="col-4">
+        <div style="padding-left: 7px;"><strong>Services (Scroll & Click)</strong></div>
+        <div  class="selection-group" id="services"></div>          
+    </div>  
+    <div class="col-4">
+        <div style="padding-left: 7px;"><strong>Resources (Scroll & Drag)</strong></div>
+        <div id="source-resources" class="selection-group"></div>          
+    </div>      
+
+</div>
+
+<div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
+
+    <div class="col-4">  
+        <p><strong>Domains</strong></p>
+        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="areas">
+        - name: Domain One
+          slug: domain-1            
+        - name: Domain Two
+          slug: domain-2 
+        - name: Domain Three
+          slug: domain-3           
+        </textarea>
+
+    </div>
+    <div class="col-4">    
+        <p><strong>Services</strong></p>
+        {% assign services = site.data.services | jsonify %}
+        <textarea style="border: 1px solid #000; width: 100%; height: 600px; overflow: auto;" id="apis-json">
+          {{ services }}
+        </textarea>
+        <script>
+          var json = document.getElementById("apis-json").value;
+          document.getElementById("apis-json").value = jsyaml.dump(JSON.parse(json));
+        </script>
+    </div>
+    
+    <div class="col-4">    
+      <p><strong>Resources</strong></p>
+      <textarea style="width: 100%; height: 250px;" id="resources">[]</textarea>      
+    </div>
+
+</div>
+
+<br>
+
+<div class="row" style="border: 2px dashed #000; border-radius: 15px; padding: 5px;" id="capture">
+    <div class="col">  
+        <div class="row" style="border-radius: 15px; padding: 10px;">
+
+            <div class="col-4">  
+
+                <div style="padding-left: 7px;"><strong>Domain One (Drop)</strong></div>
+                <div id="domain-1" class="building-group"></div>        
+                
+            </div>
+            <div class="col-4">
+
+                <div style="padding-left: 7px;"><strong>Domain Two (Drop)</strong></div>
+                <div id="domain-2" class="building-group"></div>                                         
+
+            </div>
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Domain Two (Drop)</strong></div>
+                <div id="domain-3" class="building-group"></div> 
+
+            </div> 
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    function removeService(slug){
+      document.getElementById(slug).remove();
+      document.getElementById(slug).remove();
+    }
+
+    function makeEntry(name,image,url){
+      var slug = slugify(name);
+      //console.log(slug);
+      let html = '<div class="building-block tinted" id="' + slug + '">';
+      //html += '<a href="' + url + '" target="_blank" style=" font-size: 14px;">';
+      html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+      html += '<span style=" font-size: 14px;">' + name + '</span>';
+      //html += '</a>';
+      html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
+      html += '</div>';
+      return html;
+    }
+
+    function populateBuilder(){
+
+      var areas_raw = document.getElementById("areas").value;
+      var areas = jsyaml.load(areas_raw);
+
+      var apis_json_raw = document.getElementById("apis-json").value;
+      var apis_json = jsyaml.load(apis_json_raw);
+      //var apis_json = JSON.parse(apis_json_raw);
+
+      apis_json.common = apis_json.common.sort(function(a, b) {
+          var keyA = a.name,
+              keyB = b.name;
+          if (keyA < keyB) return -1;
+          if (keyA > keyB) return 1;
+          return 0;
+      });  
+        
+      var select = document.getElementById('source-services');
+      show_tags = "Services";
+      var options = '';
+
+      //var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
+      for (let i = 0; i < apis_json.common.length; i++) {
+          for (let j = 0; j < apis_json.common[i].tags.length; j++) {
+              if(apis_json.common[i].tags[j] == show_tags){
+
+                var image = apis_json.common[i].image;
+                var name = apis_json.common[i].name;
+                var slug = slugify(apis_json.common[i].name);
+                var url = 'https://naftiko.io'
+                
+                let option = '<div class="building-block tinted" id="' + slug + '">';
+                option += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+                option += '<span style=" font-size: 14px;">' + name + '</span>';
+                option += '&nbsp;&nbsp;<a href="#" onclick="loadResources(' + "'" + name + "'" + '); return false;" target="_blank" style=" font-size: 14px;">';
+                option += '(Load)';
+                option += '</a>';                
+                option += '</div>';
+
+                options += option;
+
+              }
+          }
+      }   
+
+      document.getElementById('services').innerHTML = options; 
+          
+      for (let h = 0; h < areas.length; h++) {
+
+          show_tags = '';
+          //console.log(show_tags);
+          var html = '<strong>&nbsp;&nbsp;' + show_tags + '</strong>';
+          for (let i = 0; i < apis_json.common.length; i++) {
+              var match = 0;
+              var match_default = 0;
+              for (let j = 0; j < apis_json.common[i].tags.length; j++) {
+                  if(apis_json.common[i].tags[j] == show_tags){
+                      match = 1;
+                  }
+                  if(apis_json.common[i].tags[j] == 'Default'){
+                      match_default = 1;
+                  }                
+              }
+              if(match == 1 && match_default == 1){
+                  html += makeEntry(apis_json.common[i].name,apis_json.common[i].image,apis_json.common[i].url);
+              }
+          } 
+          document.getElementById(areas[h].slug).innerHTML = html;                   
+
+          new Sortable(document.getElementById(areas[h].slug), {
+              group: 'platform',
+              animation: 150
+          });        
+
+      }
+
+    }
+  
+  populateBuilder();
+
+function buildEntry(service){
+    var resources_raw = document.getElementById("resources").value;
+    var resources = jsyaml.load(resources_raw);
+
+    var html = '';
+    for (let i = 0; i < resources.length; i++) {
+      html += makeEntry(service + ' ' + resources[i],'drag.png','',);
+    } 
+    document.getElementById("source-resources").innerHTML = html;  
+    new Sortable(document.getElementById('source-resources'), {
+        group: 'platform',
+        animation: 150
+    });       
+  }
+
+function saveScreenshotAsImage(canvas)
+    {
+        var fileNameToSaveAs = "platform-builder-screenshot.jpg";
+        var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null)
+        {
+        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
+        }
+        else
+        {
+        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        }
+    
+        downloadLink.click();
+    }          
+
+function saveTextAsFile()
+    {
+        var fileNameToSaveAs = "platform-builder.yml";
+        var apis_json = document.getElementById("apis-json").value;
+        var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
+        var downloadLink = document.createElement("a");
+        downloadLink.download = fileNameToSaveAs;
+        downloadLink.innerHTML = "Download File";
+        if (window.webkitURL != null)
+        {
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+        }
+        else
+        {
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+        }
+    
+        downloadLink.click();
+    }        
+    
+    function readFile(input) {
+        if (input.files && input.files[0]) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            const fileContent = e.target.result;
+            try {
+            var apis_json = JSON.parse(fileContent);
+            var format = "json";
+            } catch (error) {
+                try {
+                var apis_json = jsyaml.load(fileContent);
+                var format = "yaml";
+            } catch (error) {
+                var format = "unknown";
+            } 
+            } 
+            
+            if(format == 'json' || format == 'yaml'){                       
+            document.getElementById("apis-json").value = jsyaml.dump(apis_json);
+            populateBuilder();
+            }
+            else{
+            //console.log("NOT");
+            }
+
+        };
+
+        reader.readAsText(input.files[0]); 
+        }
+    }
+    function takeScreenshot(){
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)                      
+            saveScreenshotAsImage(canvas);
+        });            
+    }
+
+    function loadResources(service){
+
+      document.getElementById("resources").value = '[]';
+
+      console.log("Loading...");
+      document.getElementById("source-resources").innerHTML = 'LOADING...';
+
+      var apis_json_raw = document.getElementById("apis-json").value;
+      var apis_json = jsyaml.load(apis_json_raw);
+
+      var services = [];
+
+      for (let h = 0; h < apis_json.common.length; h++) {
+        if(apis_json.common[h].name == service){
+          services.push(apis_json.common[h]);
+        }
+      }
+
+      for (let h = 0; h < services.length; h++) {
+        for (let i = 0; i < services[h].properties.length; i++) {
+
+          if(services[h].properties[i].type == 'OpenAPI'){
+
+            var openapi_url = services[h].properties[i].url       
+            var name = services[h].name;
+            //console.log(name);
+            //console.log(openapi_url);
+
+            var pull_url = openapi_url;
+            var user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+
+            const options = {
+                method: 'GET',
+                headers: {
+                    "user-agent": user_agent             
+                }
+            };  
+
+            fetch(pull_url,options)
+              .then(function(response) {
+                  if (!response.ok) {
+                      console.log('Error with Status Code: ' + response.status);
+                  }
+                  response.text().then(function(openapi_raw) {   
+
+                    //console.log(openapi_raw);
+
+                    var openapi = jsyaml.load(openapi_raw);
+
+                    for (const [path, method] of Object.entries(openapi.paths)) {   
+                      for (const [verb, operation] of Object.entries(method)) {                      
+
+                        var resources_raw = document.getElementById("resources").value;
+                        var resources = jsyaml.load(resources_raw);
+
+                        resources[operation.operationId] = operation;
+                        if(operation.tags){
+                          for (let a = 0; a < operation.tags.length; a++) {
+                            var already = 0;
+                             for (let b = 0; b < resources.length; b++) {
+                                if(resources[b] == operation.tags[a]){
+                                  already = 1;
+                                }
+                             }
+                          if(already == 0){
+                            var this_tag = operation.tags[a];
+                            this_tag = this_tag.replaceAll(".","");
+                            this_tag = this_tag.replaceAll("Restore ","");
+                            this_tag = this_tag.replaceAll("Update ","");
+                            this_tag = this_tag.replaceAll("Download ","");
+                            this_tag = this_tag.replaceAll("Select ","");
+                            this_tag = this_tag.replaceAll("Create ","");
+                            this_tag = this_tag.replaceAll("A ","");
+                            this_tag = this_tag.trim();
+                            resources.push(this_tag);
+                            }
+                          }
+                        }
+
+                        resources.sort();
+                        var resources_yaml = jsyaml.dump(resources);
+                        document.getElementById("resources").value = resources_yaml;
+                        
+                        buildEntry(service);
+                      }
+                    }
+
+
+                  });
+                })
+                .catch(function(err) {
+                    console.log('Error: ' + err);
+            });
+
+          }    
+
+        }
+      }
+
+    }
+</script>
