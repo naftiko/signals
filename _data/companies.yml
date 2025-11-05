@@ -17,28 +17,28 @@ common:
     image: fedex.png
     tags:
       - Shipping & Logistics      
-    url: https://example.com  
+    url: https://www.fedex.com/
 
   - name: UPS
     type: Company
     image: ups.png
     tags:
       - Shipping & Logistics     
-    url: https://example.com     
+    url: https://www.ups.com/   
 
   - name: 7-Eleven
     type: Company
     image: 7-eleven.png
     tags:
       - Convenience Stores     
-    url: https://example.com   
+    url: https://www.7-eleven.com/
 
   - name: CircleK
     type: Company
     image: circlek.png
     tags:
       - Convenience Stores     
-    url: https://example.com    
+    url: https://www.circlek.com/
 
   - name: BNP Paribas
     type: Company
@@ -52,7 +52,7 @@ common:
     image: capital-one.png
     tags:
       - Banks   
-    url: https://example.com    
+    url: https://group.bnpparibas
 
   - name: Nike
     type: Company
@@ -60,7 +60,7 @@ common:
     tags:
       - Athletic Apparel
       - Footwear
-    url: https://example.com   
+    url: https://www.nike.com
 
   - name: Adidas
     type: Company
@@ -68,63 +68,63 @@ common:
     tags:
       - Athletic Apparel
       - Footwear
-    url: https://example.com    
+    url: https://www.adidas.com/
 
   - name: Gap
     type: Company
     image: gap.png
     tags:
       - Apparel Retail
-    url: https://example.com    
+    url: https://www.gap.com/
 
   - name: H&M
     type: Company
     image: hm.png
     tags:
       - Apparel Retail
-    url: https://example.com        
+    url: https://www2.hm.com/    
 
   - name: Cvent
     type: Company
     image: cvent.png
     tags:
       - Events   
-    url: https://example.com   
+    url: https://www.cvent.com/
 
   - name: Eventbrite
     type: Company
     image: eventbrite.png
     tags:
       - Events   
-    url: https://example.com  
+    url: https://www.eventbrite.com/
 
   - name: Riot Games
     type: Company
     image: riot-games.png
     tags:
       - Games 
-    url: https://example.com   
+    url: https://www.riotgames.com
 
   - name: Blizzard Entertainment
     type: Company
     image: blizzard-entertainment.png
     tags:
       - Games  
-    url: https://example.com    
+    url: https://www.blizzard.com
 
   - name: Goldman Sachs
     type: Company
     image: goldman-sachs.png
     tags:
       - Financial  
-    url: https://example.com   
+    url: https://www.goldmansachs.com/
 
   - name: JP Morgan Chase
     type: Company
     image: jpmorganchase.png
     tags:
       - Financial  
-    url: https://example.com   
+    url: https://www.jpmorganchase.com/
 
   - name: Bloomberg
     type: Company
@@ -138,98 +138,98 @@ common:
     image: adp.png
     tags:
       - Human Resources  
-    url: https://example.com      
+    url: https://www.adp.com/
 
   - name: Allianz
     type: Company
     image: allianz.png
     tags:
       - Financial  
-    url: https://example.com   
+    url: https://www.allianz.com
 
   - name: Costco
     type: Company
     image: costco.png
     tags:
       - Retail  
-    url: https://example.com    
+    url: https://www.costco.com/
 
   - name: Walmart
     type: Company
     image: walmart.png
     tags:
       - Retail  
-    url: https://example.com    
+    url: https://www.walmart.com/
 
   - name: Amadeus
     type: Company
     image: amadeus.png
     tags:
       - Travel  
-    url: https://example.com  
+    url: https://amadeus.com
 
   - name: EY
     type: Company
     image: ey.png
     tags:
       - Consulting  
-    url: https://example.com   
+    url: https://www.ey.com  
 
   - name: Booz Allen
     type: Company
     image: booz-allen.png
     tags:
       - Consulting  
-    url: https://example.com  
+    url: https://www.boozallen.com/
 
   - name: Accord
     type: Company
     image: accord.png
     tags:
       - Sales  
-    url: https://example.com   
+    url: https://inaccord.com/
 
   - name: McDonalds
     type: Company
     image: mcdonalds.png
     tags:
       - Fast Food
-    url: https://example.com    
+    url: https://www.mcdonalds.com  
 
   - name: Chick-Fila
     type: Company
     image: chick-fila.png
     tags:
       - Fast Food
-    url: https://example.com     
+    url: https://www.chick-fil-a.com/
 
   - name: Lego
     type: Company
     image: lego.png
     tags:
       - Toys 
-    url: https://example.com    
+    url: https://www.lego.com
 
   - name: Mattel
     type: Company
     image: mattel.png
     tags:
       - Toys 
-    url: https://example.com   
+    url: https://about.mattel.com/
 
   - name: Ford
     type: Company
     image: ford.png
     tags:
       - Automobiles
-    url: https://example.com                    
+    url: https://www.ford.com/             
 
   - name: General Motors
     type: Company
     image: gm.png
     tags:
       - Automobiles
-    url: https://example.com                        
+    url: https://www.gm.com/                  
 
 maintainers:
     - FN: Naftiko

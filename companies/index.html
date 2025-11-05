@@ -57,7 +57,7 @@ PROCESS!
 </style>
 
 <h2>Companies</h2>
-<p>These are the companies available as part of this Naftiko Signals, allow the APIs for each service to be used as part of mapping and understnading the landscape.</p>
+<p>These are the 30+ companies we have profile to support this workshop and white paper. In situations where we know who are talking to, your company would be listed here, along with the existing signals emitted from job posts, blog posts, press releases, GitHub repositories, and other signals emitted daily to support business operations using technology.</p>
 
 <div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
 
@@ -76,22 +76,29 @@ PROCESS!
 </div>
 
 <div class="row" style="padding: 5px;" id="capture">
-    <div class="col" id="companies"></div>
+    <div class="col">
+        <table id="companies" class="table table-striped"></table>
+    </div>
 </div>
 
 <script>
 
     function makeEntry(name,image,url){
-      var slug = slugify(name);
-      //console.log(slug);
-      let html = '<div class="building-block tinted" id="' + slug + '">';
-      //html += '<a href="' + url + '" target="_blank" style=" font-size: 14px;">';
-      html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
-      html += '<span style=" font-size: 14px;">' + name + '</span>';
-      //html += '</a>';
-      html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
-      html += '</div>';
-      return html;
+        var slug = slugify(name);
+        let html = '<tr>';
+        htl += '<td>';
+        html += '<a hremf="' + url + '" target="_blank" style=" font-size: 14px;">';
+        html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+        htl += '</td>';
+        htl += '<td>';
+        html += '<span style=" font-size: 14px;">' + name + '</span>';
+        htl += '</td>';
+        htl += '<td>';
+        html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
+        htl += '</td>';
+        htl += '</td>';
+        html += '</table>';
+        return html;
     }
 
     function populateBuilder(){
@@ -110,7 +117,7 @@ PROCESS!
         
       var select = document.getElementById('source-companies');
       show_tags = "Companies";
-      var options = '';
+      var listings = '';
 
       //var html = '<strong>&nbsp;&nbsp;Companies (Scroll)</strong>';
       for (let i = 0; i < apis_json.common.length; i++) {
@@ -118,17 +125,31 @@ PROCESS!
         var image = apis_json.common[i].image;
         var name = apis_json.common[i].name;
         var slug = slugify(apis_json.common[i].name);
-        var url = 'https://naftiko.io'
+        var tags = apis_json.common[i].tags;
+        var show_tags = '';
+        for (let j = 0; j < tags.length; j++) {
+            show_tags += tags[j] + ', ';  
+        }
+        show_tags = show_tags.substring(0, show_tags.length-2);
+        var url = apis_json.common[i].url;
         
-        let option = '<div class="building-block tinted" id="' + slug + '">';
-        option += '<img src="/assets/img/icons/' + image + '" width="27" style="margin: 0px 5px 3px 0px;">';
-        option += '<span style=" font-size: 18px;">' + name + '</span>';               
-        option += '</div>';
+        let listing = '<tr>';
+        listing += '<td width="35" align="center">';
+        listing += '<img src="/assets/img/icons/' + image + '" width="30" style="margin: 0px 5px 3px 0px;">';
+        listing += '</td>';
+        listing += '<td>';
+        listing += '<span style=" font-size: 18px;"><strong>' + name + '</strong></span> ';
+        listing += '(<span style=" font-size: 18px;"><i>' + show_tags + '</i></span>)';               
+        listing += '</td>';  
+        listing += '<td style="text-align: right;">';
+        listing += '<a style=" font-size: 16px;" href="' + url + '">View Website</a>';               
+        listing += '</td>';              
+        listing += '</tr>';
 
-        options += option;
+        listings += listing;
       }   
 
-      document.getElementById('companies').innerHTML = options;        
+      document.getElementById('companies').innerHTML = listings;        
 
     }
   
@@ -142,11 +163,7 @@ function buildEntry(service){
     for (let i = 0; i < resources.length; i++) {
       html += makeEntry(service + ' ' + resources[i],'drag.png','',);
     } 
-    document.getElementById("source-resources").innerHTML = html;  
-    new Sortable(document.getElementById('source-resources'), {
-        group: 'platform',
-        animation: 150
-    });       
+    document.getElementById("source-resources").innerHTML = html;       
   }
 
 function saveScreenshotAsImage(canvas)
