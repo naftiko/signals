@@ -160,6 +160,15 @@
       }        
   </style>  
 
+  <script>
+    function takeScreenshot(){
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas)                      
+            saveScreenshotAsImage(canvas);
+        });            
+    }  
+  </script>
+
 	<!-- Latest Sortable -->
 	<script src="/assets/js/Sortable.js"></script>
 	<script type="text/javascript" src="/assets/primary.js"></script>
@@ -177,6 +186,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">    
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/">Overview</a>
@@ -209,6 +219,11 @@
               <a class="nav-link active" aria-current="page" href="/outcomes/">Outcomes</a>
             </li>                                                                                                                                                
           </ul>
+          <ul class="nav justify-content-end">
+            <li class="nav-item">
+              <a href="#" onclick="takeScreenshot(); return false;"><img src="/assets/img/screenshot.png" width="50"></a>
+            </li>
+          </ul>          
         </div>
       </div>
     </nav>

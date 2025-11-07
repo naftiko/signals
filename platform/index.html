@@ -3,29 +3,6 @@ layout: page
 title: Platform
 ---
 
-<script>
-
-    function show(id){
-
-        if(document.getElementById(id).style.display == ''){
-            document.getElementById(id).style.display = 'none';
-        }
-        else{
-            document.getElementById(id).style.display = '';
-        }
-
-    }
-</script>
-<div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
-    You have added a new service.
-</div>
-<div id="error-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
-ERROR!!
-</div>
-<div id="process-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
-PROCESS!
-</div>    
-
 <style>
 
     .building-block{
@@ -53,7 +30,14 @@ PROCESS!
         padding: 5px;
         width: 100%;
         overflow: auto;
-        height: 126px;
+        height: 148px;
+        }   
+        
+    .drag-group {
+        background-color: #001747;
+        border: 3px solid #001747;
+        border-radius: 10px;
+        margin: 25px; 
         }          
 
   .popover{
@@ -62,49 +46,29 @@ PROCESS!
 </style>
 
 <h2>Platform Builder</h2>
-<p>Providing a blueprint of the infrastructure used across an organization or team, providing the default configuration for managing business campabilities.</p>
+<p>This page allows you to building your own platform what a common set of standards, tools, and services, helping establish which are available for teams to build on top of, helping standardize the resources avaialble to teams to help them move faster more confidently when developing applications, integrations, and automation needed for business.</p>
 
-<div class="row">
-    <div class="col-3">   
-
-        <div class="row">
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
-                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
-            </div>
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
-                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
-            </div>
-
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
-              <img src="/assets/img/icons/download-icon.png" width="50">Download          
-            </div>
-            
-        </div>
-         <div class="row">
-            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
-                <center><input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)"></center>
-            </div>
-         </div>
-
+<div class="row" style="border: 2px solid #000; border-radius: 15px; padding: 5px; background-color: #001747;">
+    <div class="col">  
+        <div class="row" style="border-radius: 15px; padding: 10px;">
+          
+          <div class="col-4">
+              <span style="color:#FFF;"><strong>&nbsp;&nbsp;Standards (Scroll)</strong></span>
+              <div id="source-standards" class="selection-group"> </div>          
+          </div>      
+          
+          <div class="col-4">
+              <span style="color:#FFF;"><strong>&nbsp;&nbsp;Tools (Scroll)</strong></span>
+              <div id="source-tools" class="selection-group"></div>          
+          </div>             
+          <div class="col-4">
+              <span style="color:#FFF;"><strong>&nbsp;&nbsp;Services (Scroll)</strong></span>
+              <div id="source-services" class="selection-group"></div>          
+          </div>  
     </div>
-    <div class="col-3">
-        <div id="source-standards" class="selection-group">
-            <strong>&nbsp;&nbsp;Standards (Scroll)</strong>                   
-        </div>          
-    </div>      
-    <div class="col-3">
-        <div id="source-tools" class="selection-group">
-            <strong>&nbsp;&nbsp;Tools (Scroll)</strong>                      
-        </div>          
-    </div>   
-    <div class="col-3">
-        <div id="source-services" class="selection-group">
-            <strong>&nbsp;&nbsp;Services (Scroll)</strong>                    
-        </div>          
-    </div>  
-
+  </div>
 </div>
-
+<br>
 <div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
 
     <div class="col-6">  
@@ -373,7 +337,6 @@ PROCESS!
                 type: Discord
                 image: discord.png
                 tags:
-                  - Default
                   - Services   
                   - Communication
                   - Engagement      
@@ -383,7 +346,6 @@ PROCESS!
                 type: Teams
                 image: teams.webp
                 tags:
-                  - Default
                   - Services   
                   - Communication
                   - Engagement      
@@ -432,7 +394,6 @@ PROCESS!
                 type: Zuplo
                 image: zuplo.png
                 tags:
-                  - Default
                   - Services   
                   - Gateways  
                 url: https://apievangelist.com   
@@ -441,7 +402,6 @@ PROCESS!
                 type: ZuploCLI
                 image: zuplo.png
                 tags:
-                  - Default
                   - Tools   
                   - Gateways  
                   - Gateway (configuration)
@@ -451,7 +411,6 @@ PROCESS!
                 type: KongCLI
                 image: kong.png
                 tags:
-                  - Default
                   - Tools   
                   - Gateways  
                   - Gateway (configuration)
@@ -470,7 +429,6 @@ PROCESS!
                 type: PostmanInterceptor
                 image: postman.png
                 tags:
-                  - Default
                   - Services   
                   - Proxies
                   - Browsers  
@@ -480,7 +438,6 @@ PROCESS!
                 type: PostmanNewman
                 image: postman.png
                 tags:
-                  - Default
                   - Tools   
                   - Testing
                   - Runners
@@ -665,10 +622,8 @@ PROCESS!
                 type: ScalarCLI
                 image: scalar.png
                 tags:
-                  - Default
                   - Tools   
                   - Explorers
-                  - Clients
                   - Testing (scripts)
                 url: https://apievangelist.com  
 
@@ -712,15 +667,6 @@ PROCESS!
               - name: Postman Client
                 type: PostmanClient
                 image: postman.png
-                tags:
-                  - Default
-                  - Service   
-                  - Clients
-                url: https://apievangelist.com  
-              
-              - name: Scalar Client
-                type: ScalarClient
-                image: scalar.png
                 tags:
                   - Default
                   - Service   
@@ -1525,6 +1471,8 @@ PROCESS!
                 tags:
                   - Services   
                   - SDKs
+                  - Code
+                  - Default
                 url: https://apievangelist.com  
 
               - name: Fern Documentation
@@ -2384,15 +2332,7 @@ PROCESS!
                 tags:
                   - Services   
                   - Playground
-                url: https://apievangelist.com    
-
-              - name: Scalar Clients
-                type: ScalarClients
-                image: scalar.png
-                tags:
-                  - Services   
-                  - Clients
-                url: https://apievangelist.com    
+                url: https://apievangelist.com      
 
               - name: Scalar Editor
                 type: ScalarEditor
@@ -2592,6 +2532,8 @@ PROCESS!
                 tags:
                   - Services   
                   - SDKs
+                  - Code
+                  - Default
                 url: https://apievangelist.com    
                 
               - name: Theneo Documentation
@@ -2712,7 +2654,6 @@ PROCESS!
                 tags:
                   - Services   
                   - Gateways
-                  - Default
                 url: https://apievangelist.com  
 
               - name: Tyk Portals
@@ -2785,7 +2726,6 @@ PROCESS!
                 tags:
                   - Tools   
                   - Gateways
-                  - Default
                   - Gateway (configuration)
                 url: https://apievangelist.com                  
 
@@ -2997,7 +2937,6 @@ PROCESS!
                 tags:
                   - Services   
                   - Webhooks
-                  - Default
                   - CLI
                 url: https://apievangelist.com     
                 
@@ -3077,7 +3016,6 @@ PROCESS!
                 type: ApimaticVscodeLinter
                 image: apimatic.png
                 tags:
-                  - Default
                   - Tools
                   - IDE          
                 url: https://apievangelist.com     
@@ -3086,7 +3024,6 @@ PROCESS!
                 type: ApimaticCLI
                 image: apimatic.png
                 tags:
-                  - Default
                   - Tools
                   - CLI  
                   - Pipelines
@@ -3356,7 +3293,6 @@ PROCESS!
                   - Default
                   - Tools   
                   - Pipelines
-                  - Testing
                   - Automation  
                   - CLI    
                   - Testing (scripts)
@@ -3439,6 +3375,7 @@ PROCESS!
 
 <div class="row" style="border: 2px dashed #000; border-radius: 15px; padding: 5px;" id="capture">
     <div class="col">  
+        <h2>Your Platform</h2>
         <div class="row" style="border-radius: 15px; padding: 10px;">
 
             <div class="col-4">        
@@ -3518,7 +3455,7 @@ PROCESS!
       
       // Standards
       var show_tags = "Standards";
-      var html = '<strong>&nbsp;&nbsp;Standards (Scroll)</strong>';
+      var html = '';
       for (let i = 0; i < apis_json.common.length; i++) {
           var match = 0;
           for (let j = 0; j < apis_json.common[i].tags.length; j++) {
@@ -3540,7 +3477,7 @@ PROCESS!
 
 
       show_tags = "Tools";
-      var html = '<strong>&nbsp;&nbsp;Tools (Scroll)</strong>';
+      var html = '';
       for (let i = 0; i < apis_json.common.length; i++) {
           var match = 0;
           for (let j = 0; j < apis_json.common[i].tags.length; j++) {
@@ -3561,7 +3498,7 @@ PROCESS!
       
       
       show_tags = "Services";
-      var html = '<strong>&nbsp;&nbsp;Services (Scroll)</strong>';
+      var html = '';
       for (let i = 0; i < apis_json.common.length; i++) {
           var match = 0;
           for (let j = 0; j < apis_json.common[i].tags.length; j++) {
@@ -3613,87 +3550,5 @@ PROCESS!
     }
   
     populateBuilder();
-
-function saveScreenshotAsImage(canvas)
-    {
-        var fileNameToSaveAs = "platform-builder-screenshot.jpg";
-        var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        }
-        else
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-    }          
-
-function saveTextAsFile()
-    {
-        var fileNameToSaveAs = "platform-builder.yml";
-        var apis_json = document.getElementById("apis-json").value;
-        var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-        }
-        else
-        {
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-    }        
-    
-    function readFile(input) {
-        if (input.files && input.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            const fileContent = e.target.result;
-            try {
-            var apis_json = JSON.parse(fileContent);
-            var format = "json";
-            } catch (error) {
-                try {
-                var apis_json = jsyaml.load(fileContent);
-                var format = "yaml";
-            } catch (error) {
-                var format = "unknown";
-            } 
-            } 
-            
-            if(format == 'json' || format == 'yaml'){                       
-            document.getElementById("apis-json").value = jsyaml.dump(apis_json);
-            populateBuilder();
-            }
-            else{
-            console.log("NOT");
-            }
-
-        };
-
-        reader.readAsText(input.files[0]); 
-        }
-    }
-    function takeScreenshot(){
-        html2canvas(document.querySelector("#capture")).then(canvas => {
-            document.body.appendChild(canvas)                      
-            saveScreenshotAsImage(canvas);
-        });            
-    }
+        
 </script>

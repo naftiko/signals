@@ -58,33 +58,11 @@ PROCESS!
 </style>
 
 <h2>Maturity</h2>
-<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
+<p>This page allows you to organize 3rd-party services using a Wardley Map, exploring the visibility and value generation of services, as well as how mature services are as part of your operations, evaluating based upon productization and commodization of the services in-use across operations--helping inform strategic decisions in any moment.</p>
 
 <div class="row">
-    <div class="col-4">   
-
-        <div class="row">
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
-                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
-            </div>
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
-                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
-            </div>
-
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
-              <img src="/assets/img/icons/download-icon.png" width="50">Download          
-            </div>
-            
-        </div>
-         <div class="row">
-            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
-                <center><input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)"></center>
-            </div>
-         </div>
-
-    </div>
-    <div class="col-8">
-        <div style="padding-left: 7px;"><strong>Services (Scroll & Click)</strong></div>
+    <div class="col-4" style="margin-left: 80px;">
+        <div style="padding-left: 7px;"><strong>Services (Scroll & Drag)</strong></div>
         <div  class="selection-group" id="services"></div>          
     </div>    
 
@@ -274,7 +252,7 @@ PROCESS!
                 var url = 'https://naftiko.io'
                 
                 let option = '<div class="building-block tinted" id="' + slug + '">';
-                //option += '<img src="/assets/img/icons/gear.png" width="20" style="margin: 0px 5px 3px 0px;">';
+                option += '<img src="/assets/img/icons/drag.png" width="20" style="margin: 0px 5px 3px 0px;">';
                 option += '<img src="/assets/img/icons/' + image + '" width="25" style="margin: 0px 5px 3px 0px;">';
                 option += '<span style=" font-size: 14px;">' + name + '</span>';             
                 option += '</div>';
@@ -339,188 +317,4 @@ function buildEntry(service){
         animation: 150
     });       
   }
-
-function saveScreenshotAsImage(canvas)
-    {
-        var fileNameToSaveAs = "platform-builder-screenshot.jpg";
-        var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        }
-        else
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-    }          
-
-function saveTextAsFile()
-    {
-        var fileNameToSaveAs = "platform-builder.yml";
-        var apis_json = document.getElementById("apis-json").value;
-        var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-        }
-        else
-        {
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-    }        
-    
-    function readFile(input) {
-        if (input.files && input.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            const fileContent = e.target.result;
-            try {
-            var apis_json = JSON.parse(fileContent);
-            var format = "json";
-            } catch (error) {
-                try {
-                var apis_json = jsyaml.load(fileContent);
-                var format = "yaml";
-            } catch (error) {
-                var format = "unknown";
-            } 
-            } 
-            
-            if(format == 'json' || format == 'yaml'){                       
-            document.getElementById("apis-json").value = jsyaml.dump(apis_json);
-            populateBuilder();
-            }
-            else{
-            //console.log("NOT");
-            }
-
-        };
-
-        reader.readAsText(input.files[0]); 
-        }
-    }
-    function takeScreenshot(){
-        html2canvas(document.querySelector("#capture")).then(canvas => {
-            document.body.appendChild(canvas)                      
-            saveScreenshotAsImage(canvas);
-        });            
-    }
-
-    function loadResources(service){
-
-      document.getElementById("resources").value = '[]';
-
-      console.log("Loading...");
-      document.getElementById("source-resources").innerHTML = 'LOADING...';
-
-      var apis_json_raw = document.getElementById("apis-json").value;
-      var apis_json = jsyaml.load(apis_json_raw);
-
-      var services = [];
-
-      for (let h = 0; h < apis_json.common.length; h++) {
-        if(apis_json.common[h].name == service){
-          services.push(apis_json.common[h]);
-        }
-      }
-
-      for (let h = 0; h < services.length; h++) {
-        for (let i = 0; i < services[h].properties.length; i++) {
-
-          if(services[h].properties[i].type == 'OpenAPI'){
-
-            var openapi_url = services[h].properties[i].url       
-            var name = services[h].name;
-            //console.log(name);
-            //console.log(openapi_url);
-
-            var pull_url = openapi_url;
-            var user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
-
-            const options = {
-                method: 'GET',
-                headers: {
-                    "user-agent": user_agent             
-                }
-            };  
-
-            fetch(pull_url,options)
-              .then(function(response) {
-                  if (!response.ok) {
-                      console.log('Error with Status Code: ' + response.status);
-                  }
-                  response.text().then(function(openapi_raw) {   
-
-                    //console.log(openapi_raw);
-
-                    var openapi = jsyaml.load(openapi_raw);
-
-                    for (const [path, method] of Object.entries(openapi.paths)) {   
-                      for (const [verb, operation] of Object.entries(method)) {                      
-
-                        var resources_raw = document.getElementById("resources").value;
-                        var resources = jsyaml.load(resources_raw);
-
-                        resources[operation.operationId] = operation;
-                        if(operation.tags){
-                          for (let a = 0; a < operation.tags.length; a++) {
-                            var already = 0;
-                             for (let b = 0; b < resources.length; b++) {
-                                if(resources[b] == operation.tags[a]){
-                                  already = 1;
-                                }
-                             }
-                          if(already == 0){
-                            var this_tag = operation.tags[a];
-                            this_tag = this_tag.replaceAll(".","");
-                            this_tag = this_tag.replaceAll("Restore ","");
-                            this_tag = this_tag.replaceAll("Update ","");
-                            this_tag = this_tag.replaceAll("Download ","");
-                            this_tag = this_tag.replaceAll("Select ","");
-                            this_tag = this_tag.replaceAll("Create ","");
-                            this_tag = this_tag.replaceAll("A ","");
-                            this_tag = this_tag.trim();
-                            resources.push(this_tag);
-                            }
-                          }
-                        }
-
-                        resources.sort();
-                        var resources_yaml = jsyaml.dump(resources);
-                        document.getElementById("resources").value = resources_yaml;
-                        
-                        buildEntry(service);
-                      }
-                    }
-
-
-                  });
-                })
-                .catch(function(err) {
-                    console.log('Error: ' + err);
-            });
-
-          }    
-
-        }
-      }
-
-    }
 </script>

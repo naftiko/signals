@@ -57,35 +57,8 @@ PROCESS!
 </style>
 
 <h2>Services</h2>
-<p>These are the services available as part of this Naftiko Signals, allow the APIs for each service to be used as part of mapping and understnading the landscape.</p>
-<br>
-<div class="row">
-    <div class="col">   
-
-        <div class="row">
-
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
-                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
-            </div>
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
-                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
-            </div>
-
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
-              <img src="/assets/img/icons/download-icon.png" width="50">Download          
-            </div>
-            
-            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
-                <input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)">
-            </div>
-
-         </div>
-
-    </div>
-
-</div>
-
-<div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
+<p>These are the services available as part of this Naftiko Signals, allow the APIs for each service to be used as part of mapping and understanding the landscape of services in use.</p>
+<div class="row" style="border-radius: 15px; padding: 15px; margin: 0px; border: 2px solid #000; display: none;" id="edit-config">
 
     <div class="col-12">    
         <p><strong>Services</strong></p>
@@ -100,8 +73,6 @@ PROCESS!
     </div>
 
 </div>
-
-<br>
 
 <div class="row" style="padding: 5px;" id="capture">
     <div class="col" id="services"></div>

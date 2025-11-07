@@ -2,28 +2,6 @@
 layout: page
 title: Domains
 ---
-<script>
-    function show(id){
-
-        if(document.getElementById(id).style.display == ''){
-            document.getElementById(id).style.display = 'none';
-        }
-        else{
-            document.getElementById(id).style.display = '';
-        }
-
-    }
-</script>
-
-<div id="add-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
-    You have added a new service.
-</div>
-<div id="error-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
-ERROR!!
-</div>
-<div id="process-banner" class="alert alert-danger" role="alert" style="text-align: center; display: none;">
-PROCESS!
-</div>    
 
 <style>
 
@@ -57,35 +35,19 @@ PROCESS!
 </style>
 
 <h2>Domain Mapping</h2>
-<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
+<p>This page allows you to map out digital resources available to you across the 3rd-party resources within any domain -- you can define your own domains, but we provide you with four starter domains for business operations, marketing operations, engineering operations, and artificial intelligence (ie. Claude, Gemini, ChatGPT, Ollama, and Hugging Face).</p>
 
 <div class="row">
-    <div class="col-4">   
-
-        <div class="row">
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
-                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
-            </div>
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
-                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
-            </div>
-
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
-              <img src="/assets/img/icons/download-icon.png" width="50">Download          
-            </div>
-            
-        </div>
-         <div class="row">
-            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
-                <center><input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)"></center>
-            </div>
-         </div>
-
-    </div>
     <div class="col-4">
         <div style="padding-left: 7px;"><strong>Services (Scroll & Click)</strong></div>
         <div  class="selection-group" id="services"></div>          
     </div>  
+    <div class="col-4" style="padding-top: 35px;">
+        <center>
+          <img src="/assets/img/right-arrow-circle.png" width="100">
+          <p><strong>Load Resources By Clicking On Service</strong></p>
+        </center> 
+    </div>      
     <div class="col-4">
         <div style="padding-left: 7px;"><strong>Resources (Scroll & Drag)</strong></div>
         <div id="source-resources" class="selection-group"></div>          
@@ -98,12 +60,14 @@ PROCESS!
     <div class="col-4">  
         <p><strong>Domains</strong></p>
         <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="areas">
-        - name: Domain One
-          slug: domain-1            
-        - name: Domain Two
-          slug: domain-2 
-        - name: Domain Three
-          slug: domain-3           
+        - name: Business Operations
+          slug: business-operations         
+        - name: Marketing Operations
+          slug: marketing-operations
+        - name: Engineering Operations
+          slug: engineering-operations 
+        - name: Artificial Intelligence
+          slug: artificial-intelligence                    
         </textarea>
 
     </div>
@@ -132,22 +96,28 @@ PROCESS!
     <div class="col">  
         <div class="row" style="border-radius: 15px; padding: 10px;">
 
-            <div class="col-4">  
+            <div class="col-3">  
 
-                <div style="padding-left: 7px;"><strong>Domain One (Drop)</strong></div>
-                <div id="domain-1" class="building-group"></div>        
+                <div style="padding-left: 7px;"><strong>Business Operations (Drop)</strong></div>
+                <div id="business-operations" class="building-group"></div>        
                 
             </div>
-            <div class="col-4">
+            <div class="col-3">
 
-                <div style="padding-left: 7px;"><strong>Domain Two (Drop)</strong></div>
-                <div id="domain-2" class="building-group"></div>                                         
+                <div style="padding-left: 7px;"><strong>Marketing Operations (Drop)</strong></div>
+                <div id="marketing-operations" class="building-group"></div>                                         
 
             </div>
-            <div class="col-4"> 
+            <div class="col-3"> 
 
-                <div style="padding-left: 7px;"><strong>Domain Two (Drop)</strong></div>
-                <div id="domain-3" class="building-group"></div> 
+                <div style="padding-left: 7px;"><strong>Engineering Operations (Drop)</strong></div>
+                <div id="engineering-operations" class="building-group"></div> 
+
+            </div> 
+            <div class="col-3"> 
+
+                <div style="padding-left: 7px;"><strong>Artificial Intelligence (Drop)</strong></div>
+                <div id="artificial-intelligence" class="building-group"></div> 
 
             </div> 
 
