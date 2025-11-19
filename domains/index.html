@@ -37,19 +37,21 @@ title: Domains
 <h2>Domain Mapping</h2>
 <p>This page allows you to map out digital resources available to you across the 3rd-party resources within any domain -- you can define your own domains, but we provide you with four starter domains for business operations, marketing operations, engineering operations, and artificial intelligence (ie. Claude, Gemini, ChatGPT, Ollama, and Hugging Face).</p>
 
-<div class="row">
+<div class="row" style="border: 2px solid #000; border-radius: 15px; padding: 5px; background-color: #001747;">
     <div class="col-4">
-        <div style="padding-left: 7px;"><strong>Services (Scroll & Click)</strong></div>
+        <div style="padding-left: 7px; color: #FFF;"><strong>Services (Scroll & Click)</strong></div>
         <div  class="selection-group" id="services"></div>          
     </div>  
-    <div class="col-4" style="padding-top: 35px;">
-        <center>
-          <img src="/assets/img/right-arrow-circle.png" width="100">
-          <p><strong>Load Resources By Clicking On Service</strong></p>
-        </center> 
+    <div class="col-4" style="padding-top: 55px; padding-left: 25px;">
+      <ol style="color: #FFF;">
+        <li>Find the Service You Need on Left</li>
+        <li>Click "Load" to See Resources on Right.</li>
+        <li>Drag Resources Into Individual Domain</li>
+        <li>Repeat Until Domain Resources Are Defined</li>
+      </ol>
     </div>      
     <div class="col-4">
-        <div style="padding-left: 7px;"><strong>Resources (Scroll & Drag)</strong></div>
+        <div style="padding-left: 7px; color: #FFF;"><strong>Resources (Scroll & Drag)</strong></div>
         <div id="source-resources" class="selection-group"></div>          
     </div>      
 
@@ -225,102 +227,19 @@ title: Domains
   
   populateBuilder();
 
-function buildEntry(service){
-    var resources_raw = document.getElementById("resources").value;
-    var resources = jsyaml.load(resources_raw);
+  function buildEntry(service){
+      var resources_raw = document.getElementById("resources").value;
+      var resources = jsyaml.load(resources_raw);
 
-    var html = '';
-    for (let i = 0; i < resources.length; i++) {
-      html += makeEntry(service + ' ' + resources[i],'drag.png','',);
-    } 
-    document.getElementById("source-resources").innerHTML = html;  
-    new Sortable(document.getElementById('source-resources'), {
-        group: 'platform',
-        animation: 150
-    });       
-  }
-
-function saveScreenshotAsImage(canvas)
-    {
-        var fileNameToSaveAs = "platform-builder-screenshot.jpg";
-        var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        }
-        else
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-    }          
-
-function saveTextAsFile()
-    {
-        var fileNameToSaveAs = "platform-builder.yml";
-        var apis_json = document.getElementById("apis-json").value;
-        var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-        }
-        else
-        {
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-    }        
-    
-    function readFile(input) {
-        if (input.files && input.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            const fileContent = e.target.result;
-            try {
-            var apis_json = JSON.parse(fileContent);
-            var format = "json";
-            } catch (error) {
-                try {
-                var apis_json = jsyaml.load(fileContent);
-                var format = "yaml";
-            } catch (error) {
-                var format = "unknown";
-            } 
-            } 
-            
-            if(format == 'json' || format == 'yaml'){                       
-            document.getElementById("apis-json").value = jsyaml.dump(apis_json);
-            populateBuilder();
-            }
-            else{
-            //console.log("NOT");
-            }
-
-        };
-
-        reader.readAsText(input.files[0]); 
-        }
-    }
-    function takeScreenshot(){
-        html2canvas(document.querySelector("#capture")).then(canvas => {
-            document.body.appendChild(canvas)                      
-            saveScreenshotAsImage(canvas);
-        });            
+      var html = '';
+      for (let i = 0; i < resources.length; i++) {
+        html += makeEntry(service + ' ' + resources[i],'drag.png','',);
+      } 
+      document.getElementById("source-resources").innerHTML = html;  
+      new Sortable(document.getElementById('source-resources'), {
+          group: 'platform',
+          animation: 150
+      });       
     }
 
     function loadResources(service){

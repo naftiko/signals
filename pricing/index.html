@@ -57,33 +57,7 @@ PROCESS!
 </style>
 
 <h2>Pricing</h2>
-<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
-
-<div class="row">
-    <div class="col">   
-
-        <div class="row">
-
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" title="Configure" onclick="show('edit-config'); return false;">
-                <img src="/assets/img/icons/settings-icon.png" width="50" >Configure
-            </div>
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="takeScreenshot(); return false;" title="Take Screenshot"> 
-                <img src="/assets/img/icons/image-icon.png" width="50"> Screenshot       
-            </div>
-
-            <div class="col" style="border: 1px solid #FFF; text-align: center;" onclick="saveTextAsFile(); return false;" title="Save YAML"> 
-              <img src="/assets/img/icons/download-icon.png" width="50">Download          
-            </div>
-            
-            <div class="col" style="border: 1px solid #FFF; text-align: center; padding: 15px;"> 
-                <input type="file" id="upload-yaml" value="Upload" onchange="readFile(this)">
-            </div>
-
-         </div>
-
-    </div>
-
-</div>
+<p>These are all of the services mapped out based upon the type of pricing they offer, helping you see the many different ways in which you need to approach the budget across the services you depend upon.</p>
 
 <div class="row" style="border-radius: 15px; padding: 15px; margin: 5px; border: 2px solid #000; display: none;" id="edit-config">
 
@@ -118,11 +92,29 @@ PROCESS!
 
 </div>
 
-<br>
-
 <div class="row" style="border: 2px dashed #000; border-radius: 15px; padding: 5px;" id="capture">
     <div class="col">  
         <div class="row" style="border-radius: 15px; padding: 10px;">
+
+            <div class="col-4">  
+
+                <div style="padding-left: 7px;"><strong>User</strong></div>
+                <div id="user" class="building-group"></div>        
+                
+            </div>
+            <div class="col-4">
+
+                <div style="padding-left: 7px;"><strong>Usage</strong></div>
+                <div id="usage" class="building-group"></div>                                         
+
+            </div>
+
+            <div class="col-4"> 
+
+                <div style="padding-left: 7px;"><strong>Subscription</strong></div>
+                <div id="subscription" class="building-group"></div> 
+
+            </div>              
 
             <div class="col-4">  
 
@@ -142,18 +134,6 @@ PROCESS!
                 <div id="request" class="building-group"></div>        
                 
             </div>                                 
-            <div class="col-4">  
-
-                <div style="padding-left: 7px;"><strong>User</strong></div>
-                <div id="user" class="building-group"></div>        
-                
-            </div>
-            <div class="col-4">
-
-                <div style="padding-left: 7px;"><strong>Usage</strong></div>
-                <div id="usage" class="building-group"></div>                                         
-
-            </div>
             <div class="col-4"> 
 
                 <div style="padding-left: 7px;"><strong>Model</strong></div>
@@ -177,26 +157,13 @@ PROCESS!
                 <div style="padding-left: 7px;"><strong>Tier</strong></div>
                 <div id="tier" class="building-group"></div> 
 
-            </div>    
-            <div class="col-4"> 
-
-                <div style="padding-left: 7px;"><strong>Subscription</strong></div>
-                <div id="subscription" class="building-group"></div> 
-
-            </div>    
+            </div>      
             <div class="col-4"> 
 
                 <div style="padding-left: 7px;"><strong>Percentage</strong></div>
                 <div id="percentage" class="building-group"></div> 
 
-            </div>   
-            <div class="col-4"> 
-
-                <div style="padding-left: 7px;"><strong>Contract</strong></div>
-                <div id="contract" class="building-group"></div> 
-
-            </div>                                                   
-
+            </div>                                                 
             <div class="col-4"> 
 
                 <div style="padding-left: 7px;"><strong>Region</strong></div>
@@ -262,9 +229,9 @@ PROCESS!
                 let option = '<div class="building-block tinted" id="' + slug + '">';
                 option += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
                 option += '<span style=" font-size: 14px;">' + name + '</span>';
-                option += '&nbsp;&nbsp;<a href="#" onclick="loadResources(' + "'" + name + "'" + '); return false;" target="_blank" style=" font-size: 14px;">';
-                option += '(Load)';
-                option += '</a>';                
+                //option += '&nbsp;&nbsp;<a href="#" onclick="loadResources(' + "'" + name + "'" + '); return false;" target="_blank" style=" font-size: 14px;">';
+                //option += '(Load)';
+                //option += '</a>';                
                 option += '</div>';
 
                 for (let k = 0; k <  apis_json.common[i].pricing.length; k++) {
@@ -301,88 +268,6 @@ PROCESS!
             group: 'platform',
             animation: 150
         });       
-    }
-
-    function saveScreenshotAsImage(canvas){
-        var fileNameToSaveAs = "platform-builder-screenshot.jpg";
-        var textFileAsBlob = new Blob([canvas], {type:'image/jpeg'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        }
-        else
-        {
-        downloadLink.href  = canvas.toDataURL('image/jpeg', 0.8);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-    }          
-
-    function saveTextAsFile(){
-        var fileNameToSaveAs = "platform-builder.yml";
-        var apis_json = document.getElementById("apis-json").value;
-        var textFileAsBlob = new Blob([apis_json], {type:'text/plain'}); 
-        var downloadLink = document.createElement("a");
-        downloadLink.download = fileNameToSaveAs;
-        downloadLink.innerHTML = "Download File";
-        if (window.webkitURL != null)
-        {
-        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-        }
-        else
-        {
-        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
-        downloadLink.onclick = destroyClickedElement;
-        downloadLink.style.display = "none";
-        document.body.appendChild(downloadLink);
-        }
-    
-        downloadLink.click();
-        }        
-    
-    function readFile(input) {
-        if (input.files && input.files[0]) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            const fileContent = e.target.result;
-            try {
-            var apis_json = JSON.parse(fileContent);
-            var format = "json";
-            } catch (error) {
-                try {
-                var apis_json = jsyaml.load(fileContent);
-                var format = "yaml";
-            } catch (error) {
-                var format = "unknown";
-            } 
-            } 
-            
-            if(format == 'json' || format == 'yaml'){                       
-            document.getElementById("apis-json").value = jsyaml.dump(apis_json);
-            populateBuilder();
-            }
-            else{
-            //console.log("NOT");
-            }
-
-        };
-
-        reader.readAsText(input.files[0]); 
-        }
-    }
-
-    function takeScreenshot(){
-        html2canvas(document.querySelector("#capture")).then(canvas => {
-            document.body.appendChild(canvas)                      
-            saveScreenshotAsImage(canvas);
-        });            
     }
 
 </script>

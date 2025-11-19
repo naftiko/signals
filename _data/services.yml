@@ -19,7 +19,6 @@ common:
       - Usage
       - Subscription
       - Percentage
-      - Contract
     tags:
       - Services
     url: https://example.com
@@ -291,6 +290,7 @@ common:
       - Free
       - User
       - Usage
+      - Subscription
       - Model
       - Token
     tags:
