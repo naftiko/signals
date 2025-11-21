@@ -15,6 +15,13 @@ common:
   - name: Stripe
     type: Service
     image: stripe.png
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/stripe/refs/heads/main/openapi/accounts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/stripe/refs/heads/main/openapi/apple-pay-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/stripe/refs/heads/main/openapi/application-fees-openapi-original.yml
+        type: OpenAPI    
     pricing:
       - Usage
       - Subscription
@@ -42,7 +49,122 @@ common:
       - Request        
       - Tier
       - Subscription
-      - Percentage       
+      - Percentage  
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/abandoned-cart-emails-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/abandoned-carts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/accepted-payment-methods-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/carts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/catalog-brands-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/catalog-categories-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/catalog-category-trees-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/catalog-product-modifiers-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/catalog-product-variant-options-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/catalog-product-variants-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/catalog-products-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/channels-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/checkouts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/content-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/currencies-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/current-customer-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/custom-template-associations-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/customer-login-sso-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/customers-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/email-templates-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/geography-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/marketing-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/orders-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/pages-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/payment-access-token-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/payment-methods-deprecated-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/payment-processing-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/price-lists-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/pricing-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/redirects-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/scripts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/settings-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/shipping-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/shipping-providers-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/sites-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/store-information-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/store-logs-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-carts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-checkouts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-cookie-consent-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-customers-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-form-fields-beta-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-orders-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-subscriptions-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/storefront-token-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/subscribers-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/tax-classes-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/tax-properties-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/tax-provider-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/tax-provider-connection-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/tax-rates-zones-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/tax-settings-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/tax-zone-check-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/themes-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/webhooks-v3-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/widgets-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/bigcommerce/refs/heads/main/openapi/wishlist-openapi-original.yml
+        type: OpenAPI
     tags:
       - Services
     url: https://example.com    
@@ -333,6 +455,40 @@ common:
     tags:
       - Services
     url: https://example.com                   
+  - name: Microservice
+    type: Microservice
+    image: microservices.png
+    pricing:
+      - Internal
+    tags:
+      - Microservices
+    url: https://example.com  
+  - name: Partner API (Internal)
+    type: API
+    image: partner.png
+    pricing:
+      - Internal
+    tags:
+      - Partner
+    url: https://example.com 
+  - name: Jobs API (Internal)
+    type: API
+    image: jobs.png
+    pricing:
+      - Internal
+    tags:
+      - Jobs
+      - Careers
+    url: https://example.com    
+  - name: CRM API (Internal)
+    type: API
+    image: crm.png
+    pricing:
+      - Internal
+    tags:
+      - Contacts
+      - CRM
+    url: https://example.com                  
 maintainers:
     - FN: Naftiko
       email: kinlane@naftiko.io

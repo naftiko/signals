@@ -100,25 +100,33 @@ title: Domains
 
             <div class="col-3">  
 
-                <div style="padding-left: 7px;"><strong>Business Operations (Drop)</strong></div>
+                <div style="padding-left: 7px;">
+                  <input type="text" style="border: 1px solid #FFF; width: 100%; padding: 3px; font-weight: bold;" value="Business Operations">
+                </div>
                 <div id="business-operations" class="building-group"></div>        
                 
             </div>
             <div class="col-3">
 
-                <div style="padding-left: 7px;"><strong>Marketing Operations (Drop)</strong></div>
+                <div style="padding-left: 7px;">
+                  <input type="text" style="border: 1px solid #FFF; width: 100%; padding: 3px; font-weight: bold;" value="Marketing Operations">
+                </div>
                 <div id="marketing-operations" class="building-group"></div>                                         
 
             </div>
             <div class="col-3"> 
 
-                <div style="padding-left: 7px;"><strong>Engineering Operations (Drop)</strong></div>
+                <div style="padding-left: 7px;">
+                  <input type="text" style="border: 1px solid #FFF; width: 100%; padding: 3px; font-weight: bold;" value="Engineering Operations">
+                </div>
                 <div id="engineering-operations" class="building-group"></div> 
 
             </div> 
             <div class="col-3"> 
 
-                <div style="padding-left: 7px;"><strong>Artificial Intelligence (Drop)</strong></div>
+                <div style="padding-left: 7px;">
+                  <input type="text" style="border: 1px solid #FFF; width: 100%; padding: 3px; font-weight: bold;" value="Artificial Intelligence">
+                </div>
                 <div id="artificial-intelligence" class="building-group"></div> 
 
             </div> 
@@ -227,6 +235,46 @@ title: Domains
   
   populateBuilder();
 
+
+  var html = makeEntry('GitHub List Repos','drag.png','');  
+  html += makeEntry('Amazon S3 Object','drag.png','');  
+  html += makeEntry('Anthropic Prompts','drag.png','');
+  html += makeEntry('Datadog List Apps','drag.png','');
+  html += makeEntry('Datadog List APIs','drag.png','');  
+  html += makeEntry('Datadog List Budgets','drag.png','');  
+  html += makeEntry('Jira Get Issue','drag.png','');  
+  html += makeEntry('Jira Get Issue Worklogs','drag.png','');  
+  document.getElementById('engineering-operations').innerHTML = html;         
+
+
+  var html = makeEntry('Gmail List Messages','drag.png','');  
+  html += makeEntry('Google Cal Get Cal','drag.png','');
+  html += makeEntry('Google Docs Get Docs','drag.png','');
+  html += makeEntry('Google Sheets Get Sheet','drag.png','');
+  html += makeEntry('BigCommerce Get Products','drag.png','');
+  html += makeEntry('BigCommerce Get Brands','drag.png','');
+  html += makeEntry('Zendesk Get Tickets','drag.png','');
+  html += makeEntry('Zoom List Meetings','drag.png','');  
+  document.getElementById('business-operations').innerHTML = html;       
+
+
+  var html = makeEntry('MailChimp List Campaigns','drag.png','');  
+  html += makeEntry('MailChimp List Activity','drag.png','');
+  html += makeEntry('OpenAI Chat Completions','drag.png','');
+  html += makeEntry('Hubspot Clone a Blog Post','drag.png','');
+  html += makeEntry('Hubspot Get Blog Authors','drag.png','');
+  html += makeEntry('Notion Retrieve Page','drag.png','');
+  html += makeEntry('Notion Retrieve Comments','drag.png','');
+  document.getElementById('marketing-operations').innerHTML = html;       
+
+  var html = makeEntry('Gemini Text Generation','drag.png','');  
+  html += makeEntry('Gemini Image Generation','drag.png','');
+  html += makeEntry('OpenAI Chat Completions','drag.png','');
+  html += makeEntry('OpenAI Models','drag.png','');
+  html += makeEntry('Anthropic Models','drag.png','');
+  html += makeEntry('Anthropic Prompts','drag.png','');
+  document.getElementById('artificial-intelligence').innerHTML = html;     
+
   function buildEntry(service){
       var resources_raw = document.getElementById("resources").value;
       var resources = jsyaml.load(resources_raw);
@@ -298,6 +346,7 @@ title: Domains
                         var resources = jsyaml.load(resources_raw);
 
                         resources[operation.operationId] = operation;
+                        
                         if(operation.tags){
                           for (let a = 0; a < operation.tags.length; a++) {
                             var already = 0;
@@ -321,8 +370,11 @@ title: Domains
                           }
                         }
 
-                        resources.sort();
-                        var resources_yaml = jsyaml.dump(resources);
+                        //console.log(resources);
+                        //resources.sort();
+                        console.log(resources);
+                        resources_yaml = jsyaml.dump(resources);
+                        console.log(resources_yaml);
                         document.getElementById("resources").value = resources_yaml;
                         
                         buildEntry(service);
