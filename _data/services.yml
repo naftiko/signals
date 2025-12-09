@@ -197,6 +197,9 @@ common:
       - User
       - Usage
       - Subscription  
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-gmail-api-openapi.yml      
     tags:
       - Services
     url: https://example.com    
@@ -209,6 +212,15 @@ common:
       - Usage
       - Credits
       - Subscription
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/hubspot/refs/heads/main/openapi/hubspot-authors-api-openapi.yml      
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/hubspot/refs/heads/main/openapi/hubspot-domains-api-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/hubspot/refs/heads/main/openapi/hubspot-posts-api-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/hubspot/refs/heads/main/openapi/hubspot-source-code-api-openapi.yml                    
     tags:
       - Services
     url: https://example.com                    
@@ -266,6 +278,9 @@ common:
       - User
       - Usage
       - Subscription  
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-calendar-api-openapi.yml      
     tags:
       - Services
     url: https://example.com                                    
@@ -276,6 +291,9 @@ common:
       - User
       - Usage
       - Subscription  
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-drive-api-openapi.yml      
     tags:
       - Services
     url: https://example.com   
@@ -286,6 +304,9 @@ common:
       - User
       - Usage
       - Subscription  
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-sheets-api-openapi.yml      
     tags:
       - Services
     url: https://example.com   
@@ -296,6 +317,9 @@ common:
       - User
       - Usage
       - Subscription 
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-docs-api-openapi.yml      
     tags:
       - Services
     url: https://example.com                                   
@@ -354,6 +378,9 @@ common:
       - Subscription  
     tags:
       - Services
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/datadog/refs/heads/main/openapi/datadog-api-openapi.yml
+        type: OpenAPI      
     url: https://example.com     
   - name: GitHub
     type: Service
@@ -361,7 +388,94 @@ common:
     pricing:
       - User
       - Usage
-      - Subscription    
+      - Subscription   
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-gitignore-templates--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-admin-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-admin-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-app-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-app-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-auth-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-auth-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-code-of-conduct-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-codes-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-emojis--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-events--openapi-original-review.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-events--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-events-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-feeds--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-gists--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-installation-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-issues--openapi-original-review.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-issues--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-issues-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-licenses--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-manage-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-markdown--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-meta--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-networks-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-networks-owner-repo--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-notifications--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-octocat--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-org-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-organizations--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-projects-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-rate-limit--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-repos-api-openapi-review.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-repos-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-repos-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-scim-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-search-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-search-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-setup-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-teams-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-user-api-openapi.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-user-openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/github/refs/heads/main/openapi/github-zen--openapi-original.yml?token=GHSAT0AAAAAADPJSHOXK3I5HLDJMHLH5LZI2JXB5OQ       
     tags:
       - Services
     url: https://example.com    
@@ -373,6 +487,9 @@ common:
       - Usage
       - Subscription  
       - Tier  
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/atlassian/refs/heads/main/openapi/jira-openapi-original.yml    
     tags:
       - Services
     url: https://example.com    
@@ -383,7 +500,10 @@ common:
       - User
       - Usage
       - Subscription  
-      - Tier    
+      - Tier   
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/atlassian/refs/heads/main/openapi/confluence-openapi-original.yml   
     tags:
       - Services
     url: https://example.com                                    
@@ -452,6 +572,8 @@ common:
       - Usage
       - Model
       - Token 
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-gemini-api-openapi.yml      
     tags:
       - Services
     url: https://example.com                   

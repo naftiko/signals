@@ -33,30 +33,29 @@ title: Capabilities
       }               
 </style>
 
-<h2>Capability Crafting</h2>
-<p>Map out the digital resources available to you across the 3rd-party resources within any domain, such as artificial intelligence (ie. Claude, Gemini, ChatGPT, Hugging Face).</p>
+<h2>Capabilities</h2>
+<p>What are we capable of accomplishing:</p>
+<div class="row" style="border: 2px solid #000; border-radius: 15px; padding: 5px; background-color: #001747;">
 
-<div class="row">
-
-    <div class="col-3">
-        <div style="padding-left: 7px;"><strong>Services (Scroll & Click)</strong></div>
+    <div class="col-6">
+        <div style="padding-left: 7px; color: #FFF;"><strong>Services </strong></div>
         <div  class="selection-group" id="services"></div>          
     </div>  
-    <div class="col-3">
-        <div style="padding-left: 7px;"><strong>Resources (Scroll & Drag)</strong></div>
+    <div class="col-6">
+        <div style="padding-left: 7px; color: #FFF;"><strong>Resources </strong></div>
         <div id="source-resources" class="selection-group"></div>          
     </div>  
-    <div class="col-2">
-        <div style="padding-left: 7px;"><strong>Pain (Scroll & Drag)</strong></div>
+    <div class="col-4">
+        <div style="padding-left: 7px; color: #FFF;"><strong>Pain </strong></div>
         <div id="source-pain" class="selection-group"></div>          
     </div>  
-    <div class="col-2">
-        <div style="padding-left: 7px;"><strong>Gain (Scroll & Drag)</strong></div>
-        <div id="source-gain" class="selection-group"></div>          
+    <div class="col-4">
+        <div style="padding-left: 7px; color: #FFF;"><strong>Gain</strong></div>
+        <div id="source-gains" class="selection-group"></div>          
     </div>    
-    <div class="col-2">
-        <div style="padding-left: 7px;"><strong>Actors (Scroll & Drag)</strong></div>
-        <div id="source-actors" class="selection-group"></div>          
+    <div class="col-4">
+        <div style="padding-left: 7px; color: #FFF;"><strong>Stakeholders</strong></div>
+        <div id="source-stakeholders" class="selection-group"></div>          
     </div>                  
 
 </div>
@@ -71,9 +70,7 @@ title: Capabilities
         - name: Marketing Operations
           slug: marketing-operations
         - name: Engineering Operations
-          slug: engineering-operations 
-        - name: Artificial Intelligence
-          slug: artificial-intelligence          
+          slug: engineering-operations       
         </textarea>
 
     </div>
@@ -91,7 +88,7 @@ title: Capabilities
     </div>  
     <div class="col-4">  
         <p><strong>Gain</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="gain">
+        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="gains">
         - name: Managable SaaS Spend
         - name: Managed Token Usage
         - name: Visualized SaaS Resources
@@ -102,11 +99,14 @@ title: Capabilities
 
     </div>    
     <div class="col-4">  
-        <p><strong>Actors</strong></p>
-        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="gain">
+        <p><strong>Stakeholders</strong></p>
+        <textarea style="border: 1px solid #000; width: 100%;height: 600px; overflow: auto;" id="stakeholders">
         - name: Architects
-        - name: Product Manager
+        - name: Product Managers
         - name: Integration Engineer
+        - name: Head of AI
+        - name: Head of API
+        - name: HEad of Platform
         - name: AI Engineer
         - name: Operations
         - name: Sales
@@ -139,28 +139,44 @@ title: Capabilities
     <div class="col">  
         <div class="row" style="border-radius: 15px; padding: 10px;">
 
-            <div class="col-3">  
+            <div class="col-4">  
 
-                <div style="padding-left: 7px;"><strong>Business Operations (Drop)</strong></div>
-                <div id="business-operations" class="building-group"></div>        
+                <div style="padding-left: 7px;">
+                  <input type="text" style="border: 1px solid #FFF; width: 100%; padding: 3px; font-weight: bold;" value="Event AI Context">
+                </div>
+                <div id="event-ai-context-capabilities" class="building-group"></div>   
+                <div style="padding-left: 7px;"><strong>Pain</strong></div>     
+                <div id="event-ai-context-pain" class="building-group"></div>    
+                <div style="padding-left: 7px;"><strong>Gains</strong></div>     
+                <div id="event-ai-context-gains" class="building-group"></div>    
+                <div style="padding-left: 7px;"><strong>Stakeholders</strong></div>     
+                <div id="event-ai-context-stakeholders" class="building-group"></div>    
                 
             </div>
-            <div class="col-3">
+            <div class="col-4">
 
-                <div style="padding-left: 7px;"><strong>Marketing Operations (Drop)</strong></div>
-                <div id="marketing-operations" class="building-group"></div>                                         
+                <div style="padding-left: 7px;">
+                  <input type="text" style="border: 1px solid #FFF; width: 100%; padding: 3px; font-weight: bold;" value="API Reusability">
+                </div>
+                <div id="api-reusability" class="building-group"></div>  
+                <div style="padding-left: 7px;"><strong>Pain</strong></div>     
+                <div id="api-reusability-pain" class="building-group"></div>   
+                <div style="padding-left: 7px;"><strong>Gains</strong></div>   
+                <div id="api-reusability-gains" class="building-group"></div>    
+                <div id="api-reusability-stakeholders" class="building-group"></div>                                                          
 
             </div>
-            <div class="col-3"> 
-
-                <div style="padding-left: 7px;"><strong>Engineering Operations (Drop)</strong></div>
-                <div id="engineering-operations" class="building-group"></div> 
-
-            </div> 
-            <div class="col-3"> 
-
-                <div style="padding-left: 7px;"><strong>Artificial Intelligence (Drop)</strong></div>
-                <div id="artificial-intelligence" class="building-group"></div> 
+            <div class="col-4"> 
+                <div style="padding-left: 7px;">
+                  <input type="text" style="border: 1px solid #FFF; width: 100%; padding: 3px; font-weight: bold;" value="Partner Enablement">
+                </div>
+                <div id="partner-enablement" class="building-group"></div> 
+                <div style="padding-left: 7px;"><strong>Pain</strong></div>     
+                <div id="partner-enablement-pain" class="building-group"></div>   
+                <div style="padding-left: 7px;"><strong>Gains</strong></div>   
+                <div id="partner-enablement-gains" class="building-group"></div>    
+                <div style="padding-left: 7px;"><strong>Stakeholders</strong></div>     
+                <div id="partner-enablement-stakeholders" class="building-group"></div>                   
 
             </div> 
 
@@ -234,35 +250,7 @@ title: Capabilities
       }   
 
       document.getElementById('services').innerHTML = options; 
-          
-      for (let h = 0; h < areas.length; h++) {
 
-          show_tags = '';
-          //console.log(show_tags);
-          var html = '<strong>&nbsp;&nbsp;' + show_tags + '</strong>';
-          for (let i = 0; i < apis_json.common.length; i++) {
-              var match = 0;
-              var match_default = 0;
-              for (let j = 0; j < apis_json.common[i].tags.length; j++) {
-                  if(apis_json.common[i].tags[j] == show_tags){
-                      match = 1;
-                  }
-                  if(apis_json.common[i].tags[j] == 'Default'){
-                      match_default = 1;
-                  }                
-              }
-              if(match == 1 && match_default == 1){
-                  html += makeEntry(apis_json.common[i].name,apis_json.common[i].image,apis_json.common[i].url);
-              }
-          } 
-          document.getElementById(areas[h].slug).innerHTML = html;                   
-
-          new Sortable(document.getElementById(areas[h].slug), {
-              group: 'platform',
-              animation: 150
-          });        
-
-      }
       var html = '';
       var areas_raw = document.getElementById("pain").value;
       var pain = jsyaml.load(areas_raw);      
@@ -273,7 +261,31 @@ title: Capabilities
       new Sortable(document.getElementById("source-pain"), {
           group: 'platform',
           animation: 150
-      });        
+      });  
+      
+      var html = '';
+      var areas_raw = document.getElementById("gains").value;
+      var gains = jsyaml.load(areas_raw);      
+      for (let i = 0; i < gains.length; i++) {
+        html += makeEntry(gains[i].name,'drag.png','');
+      } 
+      document.getElementById("source-gains").innerHTML = html;                   
+      new Sortable(document.getElementById("source-gains"), {
+          group: 'platform',
+          animation: 150
+      });     
+      
+      var html = '';
+      var areas_raw = document.getElementById("stakeholders").value;
+      var stakeholders = jsyaml.load(areas_raw);      
+      for (let i = 0; i < stakeholders.length; i++) {
+        html += makeEntry(stakeholders[i].name,'drag.png','');
+      } 
+      document.getElementById("source-stakeholders").innerHTML = html;                   
+      new Sortable(document.getElementById("source-stakeholders"), {
+          group: 'platform',
+          animation: 150
+      });         
     
 
     }
@@ -395,4 +407,74 @@ function buildEntry(service){
       }
 
     }
+
+  // Event Context
+  var html = makeEntry('Cvent Events Listing','drag.png','');  
+  html += makeEntry('Cvent Speaker Listings','drag.png','');  
+  html += makeEntry('Cvent Session Listings','drag.png','');
+  html += makeEntry('Cvent Exhibitor Listings','drag.png','');
+  html += makeEntry('Cvent Attendee Listings','drag.png','');  
+  html += makeEntry('LinkedIn Profiles','drag.png','');  
+  html += makeEntry('Salesforce Records','drag.png','');  
+  document.getElementById('event-ai-context-capabilities').innerHTML = html;   
+  
+  html = makeEntry('Pain','drag.png','');  
+  html += makeEntry('Pain','drag.png','');  
+  document.getElementById('event-ai-context-pain').innerHTML = html;    
+
+  html = makeEntry('Gain','drag.png','');  
+  html += makeEntry('Gain','drag.png','');  
+  document.getElementById('event-ai-context-gains').innerHTML = html;      
+
+  html = makeEntry('Architects','drag.png','');  
+  html += makeEntry('Head of AI','drag.png','');  
+  html += makeEntry('Head of API','drag.png','');  
+  document.getElementById('event-ai-context-stakeholders').innerHTML = html;    
+
+  // AI Reusability
+  html = makeEntry('AWS API Gateway Retrieve Path Mapping','drag.png','');  
+  html += makeEntry('AWS API Gateway Retrieve Models','drag.png','');  
+  html += makeEntry('AWS API Gateway Retrieve Responses','drag.png','');  
+  html += makeEntry('AWS API Gateway Retrieve Templates','drag.png','');  
+  html += makeEntry('AWS API Gateway Retrieve Deployments','drag.png','');  
+  html += makeEntry('AWS API Gateway Retrieve Domain Names','drag.png','');  
+  html += makeEntry('AWS API Gateway Retrieve Stages','drag.png','');  
+  html += makeEntry('AWS API Gateway Retrieve Usage','drag.png','');  
+  document.getElementById('api-reusability').innerHTML = html;  
+
+  html = makeEntry('Pain','drag.png','');  
+  html += makeEntry('Pain','drag.png','');  
+  document.getElementById('api-reusability-pain').innerHTML = html;    
+
+  html = makeEntry('Gain','drag.png','');  
+  html += makeEntry('Gain','drag.png','');  
+  document.getElementById('api-reusability-gains').innerHTML = html;      
+
+  html = makeEntry('Product Manager','drag.png','');  
+  html += makeEntry('Head of AI','drag.png','');  
+  html += makeEntry('Head of API','drag.png','');  
+  document.getElementById('api-reusability-stakeholders').innerHTML = html;    
+
+  // Partner Enablement
+  html = makeEntry('Avalara Calculate Taxes','drag.png','');  
+  html += makeEntry('Avalara Calculate VAT','drag.png','');  
+  html += makeEntry('Avalara Retrieve Tariff Classification','drag.png','');  
+  html += makeEntry('Avalara Retrieve Tax Codes','drag.png','');  
+  html += makeEntry('Avalara Retrieve Jurisdictions','drag.png','');  
+  html += makeEntry('Avalara Retrieve State Configuration','drag.png','');  
+  document.getElementById('partner-enablement').innerHTML = html;  
+
+  html = makeEntry('Pain','drag.png','');  
+  html += makeEntry('Pain','drag.png','');  
+  document.getElementById('partner-enablement-pain').innerHTML = html;    
+
+  html = makeEntry('Gain','drag.png','');  
+  html += makeEntry('Gain','drag.png','');  
+  document.getElementById('partner-enablement-gains').innerHTML = html;      
+
+  html = makeEntry('Head of Partnerships','drag.png','');  
+  html += makeEntry('Head of AI','drag.png','');  
+  html += makeEntry('Head of API','drag.png','');  
+  document.getElementById('partner-enablement-stakeholders').innerHTML = html;     
+
 </script>
