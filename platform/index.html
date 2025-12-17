@@ -3436,7 +3436,7 @@ title: Platform
     function makeEntry(name,image,url){
       var slug = slugify(name);
       //console.log(slug);
-      let html = '<div class="building-block tinted" id="' + slug + '"><a href="' + url + '" target="_blank"><img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">' + name + '</a><a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a></div>';
+      let html = '<div class="building-block tinted" id="' + slug + '"><a href="' + url + '" target="_blank"><img src="{{ site.url }}/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">' + name + '</a><a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a></div>';
       return html;
     }
 

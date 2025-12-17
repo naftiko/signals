@@ -87,7 +87,7 @@ PROCESS!
         let html = '<tr>';
         htl += '<td>';
         html += '<a hremf="' + url + '" target="_blank" style=" font-size: 14px;">';
-        html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+        html += '<img src="{{ site.url }}/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
         htl += '</td>';
         htl += '<td>';
         html += '<span style=" font-size: 14px;">' + name + '</span>';
@@ -134,7 +134,7 @@ PROCESS!
         
         let listing = '<tr>';
         listing += '<td width="35" align="center">';
-        listing += '<img src="/assets/img/icons/' + image + '" width="30" style="margin: 0px 5px 3px 0px;">';
+        listing += '<img src="{{ site.url }}/assets/img/icons/' + image + '" width="30" style="margin: 0px 5px 3px 0px;">';
         listing += '</td>';
         listing += '<td>';
         listing += '<span style=" font-size: 18px;"><strong>' + name + '</strong></span> ';

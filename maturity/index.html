@@ -211,7 +211,7 @@ PROCESS!
       //console.log(slug);
       let html = '<div class="building-block tinted" id="' + slug + '">';
       //html += '<a href="' + url + '" target="_blank" style=" font-size: 14px;">';
-      html += '<img src="/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
+      html += '<img src="{{ site.url }}/assets/img/icons/' + image + '" width="20" style="margin: 0px 5px 3px 0px;">';
       html += '<span style=" font-size: 14px;">' + name + '</span>';
       //html += '</a>';
       html += '<a href="#" onclick="removeService(' + "'" + slug + "'" + '); return false;" style="float: right;">&#x274C;</a>';
@@ -251,8 +251,8 @@ PROCESS!
                 var url = 'https://naftiko.io'
                 
                 let option = '<div class="building-block tinted" id="' + slug + '">';
-                option += '<img src="/assets/img/icons/drag.png" width="20" style="margin: 0px 5px 3px 0px;">';
-                option += '<img src="/assets/img/icons/' + image + '" width="25" style="margin: 0px 5px 3px 0px;">';
+                option += '<img src="{{ site.url }}/assets/img/icons/drag.png" width="20" style="margin: 0px 5px 3px 0px;">';
+                option += '<img src="{{ site.url }}/assets/img/icons/' + image + '" width="25" style="margin: 0px 5px 3px 0px;">';
                 option += '<span style=" font-size: 14px;">' + name + '</span>';             
                 option += '</div>';
 
