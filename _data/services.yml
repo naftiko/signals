@@ -29,6 +29,9 @@ common:
     tags:
       - Services
     url: https://example.com
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/shopify/refs/heads/main/openapi/shopify-openapi-original.yml    
+        type: OpenAPI    
   - name: Shopify
     type: Service
     image: shopify.png
@@ -179,7 +182,58 @@ common:
       - Subscription
     tags:
       - Services
-    url: https://example.com          
+    url: https://example.com   
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-admin-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-api-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-apps-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-auth-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-bots-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-calls-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-chat-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-conversations-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-dialog-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-dnd-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-emoji-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-files-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-migration-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-oauth-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-pins-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-reactions-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-reminders-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-rtm-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-search-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-stars-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-team-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-usergroups-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-users-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-views-openapi.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/slack/refs/heads/main/openapi/slack-workflows-openapi.yml           
   - name: Zendesk
     type: Service
     image: zendesk.png
@@ -189,7 +243,158 @@ common:
       - Subscription
     tags:
       - Services
-    url: https://example.com                                                      
+    url: https://example.com       
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/account-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/accounts-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/activities-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/any-channel-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/approval-workflow-instances-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/assignables-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/attachments-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/audit-logs-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/autocomplete-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/automations-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/bookmarks-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/brand-agents-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/brands-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/channels-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/chat-file-redactions-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/chat-redactions-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/comment-redactions-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/custom-objects-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/custom-roles-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/custom-status-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/custom-statuses-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/deleted-tickets-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/deleted-users-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/deletion-schedules-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/dynamic-content-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/email-notifications-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/group-memberships-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/group-slas-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/groups-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/imports-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/incremental-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/job-statuses-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/locales-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/macros-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/oauth-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/object-layouts-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/organization-fields-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/organization-memberships-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/organization-merges-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/organization-subscriptions-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/organizations-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/problems-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/push-notification-devices-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/queues-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/recipient-addresses-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/relationships-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/requests-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/resource-collections-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/routing-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/satisfaction-ratings-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/satisfaction-reasons-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/search-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/sessions-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/sharing-agreements-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/skips-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/slas-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/suspended-tickets-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/tags-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/target-failures-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/target-type-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/targets-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/ticket-audits-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/ticket-content-pins-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/ticket-fields-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/ticket-form-statuses-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/ticket-forms-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/ticket-metrics-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/tickets-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/trigger-categories-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/triggers-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/uploads-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/user-fields-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/users-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/views-openapi-original.yml
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zendesk/refs/heads/main/openapi/workspaces-openapi-original.yml                                                   
   - name: Gmail
     type: Service
     image: gmail.png
@@ -235,6 +440,9 @@ common:
     tags:
       - Services
     url: https://example.com    
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/mailchimp/refs/heads/main/openapi/mailchimp-marketing-api-openapi.yml    
   - name: Notion
     type: Service
     image: notion.png
@@ -246,7 +454,10 @@ common:
       - Subscription
     tags:
       - Services
-    url: https://example.com                    
+    url: https://example.com      
+    properties:
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/notion/refs/heads/main/openapi/notion-openapi.yml                  
   - name: Amazon S3
     type: Service
     image: amazon-s3.png
@@ -342,6 +553,9 @@ common:
     tags:
       - Services
     url: https://example.com     
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/microsoft-graph/refs/heads/main/openapi/microsoft-graph-openapi.yaml  
+        type: OpenAPI    
   - name: Microsoft OneNote
     type: Service
     image: microsoft-onenote.png
@@ -358,7 +572,12 @@ common:
       - Request 
     tags:
       - Services
-    url: https://example.com       
+    url: https://example.com     
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/servicenow/refs/heads/main/openapi/contact-api-openapi.yaml
+        type: OpenAPI       
+      - url: https://raw.githubusercontent.com/api-evangelist/servicenow/refs/heads/main/openapi/trouble-ticket-openapi.yaml
+        type: OpenAPI              
   - name: Zoom
     type: Service
     image: zoom.png
@@ -369,6 +588,31 @@ common:
     tags:
       - Services
     url: https://example.com       
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-account--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-chat--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-device--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-group--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-im--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-meeting--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-metrics--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-recording--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-report--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-user--openapi-original.yml
+        type: OpenAPI 
+      - url: https://raw.githubusercontent.com/api-evangelist/zoom/refs/heads/main/openapi/zoom-account--openapi-original.ymlzoom-webinar--openapi-original.yml    
+        type: OpenAPI 
   - name: DataDog
     type: Service
     image: datadog.png
@@ -506,7 +750,10 @@ common:
         url: https://raw.githubusercontent.com/api-evangelist/atlassian/refs/heads/main/openapi/confluence-openapi-original.yml   
     tags:
       - Services
-    url: https://example.com                                    
+    url: https://example.com      
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/atlassian/refs/heads/main/openapi/confluence-openapi-original.yml
+        type: OpenAPI                                  
   - name: SendGrid
     type: Service
     image: sendgrid.png
@@ -516,6 +763,95 @@ common:
     tags:
       - Services
     url: https://example.com  
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_segments_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_account_provisioning_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_alerts_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_api_keys_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_domain_authentication_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_email_activity_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_email_validation_v3.yaml
+        type: OpenAPI      
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_enforced_tls_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_integrations_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_ip_access_management_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_ip_address_management_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_ip_warmup_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_ips_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_link_branding_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_lmc_campaigns_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_lmc_contactdb_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_lmc_senders_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mail_settings_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mail_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_contacts_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_custom_fields_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_designs_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_lists_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_segments_2.0_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_senders_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_singlesends_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_stats_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_mc_test_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_partner_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_recipients_data_erasure_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_reverse_dns_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_scheduled_sends_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_scopes_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_seq_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_sso_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_stats_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_subusers_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_suppressions_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_teammates_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_templates_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_tracking_settings_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_user_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_verified_senders_v3.yaml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/sendgrid/refs/heads/main/openapi/tsg_webhooks_v3.yaml  
+        type: OpenAPI    
   - name: Twilio
     type: Service
     image: twilio.png
@@ -525,6 +861,73 @@ common:
     tags:
       - Services
     url: https://example.com  
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/accounts-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/assistant-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/autopilot-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/bulk-exports-openapi-original-review.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/bulk-exports-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/content-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/conversations-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/events-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/frontline-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/insights-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/intelligence-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/ip-message-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/marketplace-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/media-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/messaging-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/microvisor-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/monitor-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/notify-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/numbers-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/pricing-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/proxy-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/routes-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/serverless-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/studio-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/super-sim-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/sync-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/task-router-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/trunking-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/trust-hub-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/verify-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/video-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/voice-openapi-original.yml
+        type: OpenAPI
+      - url: https://raw.githubusercontent.com/api-evangelist/twilio/refs/heads/main/openapi/wireless-openapi-original.yml
+        type: OpenAPI
   - name: Anthropic
     type: Service
     image: anthropic.png
@@ -573,7 +976,9 @@ common:
       - Model
       - Token 
     properties:
-      - url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-gemini-api-openapi.yml      
+    properties:
+      - url: https://raw.githubusercontent.com/api-evangelist/google/refs/heads/main/openapi/google-gemini-api-openapi.yml    
+        type: OpenAPI   
     tags:
       - Services
     url: https://example.com                   
